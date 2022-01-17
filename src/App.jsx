@@ -5,22 +5,21 @@ import { ThemeProvider } from "@mui/material/styles";
 import SideBar from "./components/sideBar/sideBar";
 import LandingpageContainer from "./pages/landingPageContainer";
 import ProjectsContainer from "./pages/projectsContainer";
-import theme from "./styles/fonts";
+import theme from "./styles/lightTheme";
 
-const { chivoFont } = theme;
+const { lightTheme } = theme;
 
 const App = () => {
   return (
     <CssBaseline>
-      <ThemeProvider theme={chivoFont}>
+      <ThemeProvider theme={lightTheme}>
         <SideBar sx={{ position: "sticky" }} />
         <Container
-          maxWidth
           sx={{
             display: "flex",
             flexDirection: "row",
             height: "100vh",
-            width: "80%",
+            width: "100%",
           }}>
           <LandingpageContainer />
         </Container>

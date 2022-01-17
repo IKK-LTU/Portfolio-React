@@ -36,5 +36,6 @@ const poppinsFont = createTheme({
   },
 });
 
+
 const theme = { chivoFont, poppinsFont}
 export default theme;

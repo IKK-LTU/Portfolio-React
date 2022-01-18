@@ -1,12 +1,12 @@
 import React from "react";
-import { CssBaseline, Container } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 
 import SideBar from "./components/sideBar/sideBar";
-import LandingpageContainer from "./pages/landingPageContainer";
-import ProjectsContainer from "./pages/projectsContainer";
+import LandingpageContainer from "./pages/home-page.jsx";
+import ProjectsContainer from "./pages/projects-page";
 import theme from "./styles/lightTheme";
-
+import PageLayout from "./components/layouts/page-layout";
 const { lightTheme } = theme;
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
     <CssBaseline>
       <ThemeProvider theme={lightTheme}>
         <SideBar sx={{ position: "sticky" }} />
-        <Container
+        <PageLayout
           sx={{
             display: "flex",
             flexDirection: "row",
@@ -22,8 +22,8 @@ const App = () => {
             width: "100%",
           }}>
           <LandingpageContainer />
-        </Container>
-        <Container
+        </PageLayout>
+        <PageLayout
           maxWidth
           sx={{
             display: "flex",
@@ -34,7 +34,7 @@ const App = () => {
               "linear-gradient(180deg, rgba(244, 244, 245, 0.9) 0%, #FFFFFF 22.54%, rgba(255, 255, 255, 0.682692) 78.32%, #F4F4F5 100%), #FFFFFF",
           }}>
           <ProjectsContainer />
-        </Container>
+        </PageLayout>
       </ThemeProvider>
     </CssBaseline>
   );

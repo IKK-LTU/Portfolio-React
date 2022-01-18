@@ -22,7 +22,7 @@ function projectsContainer() {
           <ProjectsPageImageButton />
         </Box>
         <div>
-          <p>Labas</p>
+          <p>Project page</p>
         </div>
         <div>
           <p>Labas</p>

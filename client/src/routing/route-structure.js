@@ -65,4 +65,30 @@ export default [
       },
     ],
   },
+  {
+    path: "/dashboard",
+    pageName: "DashboardLayout",
+    children: [
+      {
+        path: "profile",
+        pageName: "ProfilePage",
+        auth: LOGGED_IN,
+      },
+      {
+        path: "users-panel",
+        pageName: "UsersPanelPage",
+        auth: ADMIN,
+      },
+      {
+        path: "projects-panel",
+        pageName: "UsersPanelPage",
+        auth: PROJECTS_MANAGER,
+      },
+      {
+        path: "blogs-panel",
+        pageName: "UsersPanelPage",
+        auth: BLOG_MANAGER,
+      },
+    ],
+  }
 ];

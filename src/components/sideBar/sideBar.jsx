@@ -1,33 +1,27 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import { Container } from "@mui/material";
-import Button from "@mui/material/Button";
+import SideBarLink from "./sideBar-link";
 
-const pages = ["Home", "Projects", "Blog", "Contacts"];
+const pages = [
+  { title: "Home", path: "/" },
+  { title: "Projects", path: "/projects-page" },
+  { title: "Blog", path: "/blog-page" },
+  { title: "Contacts", path: "/contacts-page" },
+];
 
-const LinkButton = styled(Button)(({ theme }) => ({
-  color: "black",
-  background: "none",
-  ":hover, :focus": {
-    color: "#79815E",
-    textDecoration: "line-through",
-    transition: "0.5s",
-    background: "none",
-  },
-}));
 const SideBar = styled(AppBar)(({ theme }) => ({
-  [theme.breakpoints.down("md")]: {
-    display: "none",
+  [theme.breakpoints.down("lg")]: {
+    position: "sticky",
+    left: "0",
+    width: "70%",
+    margin: "auto",
+    height: "60px",
   },
-}));
-const NavBarBox = styled(Box)(({ theme }) => ({
-  [theme.breakpoints.up("md")]: {
-    display: "none",
-    width: "100vh",
-    height: "20vh",
+
+  [theme.breakpoints.down("sm")]: {
+    width: "95%",
   },
 }));
 
@@ -37,64 +31,31 @@ const ResponsiveAppBar = () => {
       <SideBar
         color='inherit'
         sx={{
+          display: "flex",
+          justifyContent: "space-around",
+          height: "100%",
           left: "50px",
-          width: "20%",
+          width: "10%",
           boxShadow: "none",
           background: "none",
         }}>
-        <Container maxWidth='xl'>
-          <Toolbar sx={{ height: "100vh" }} disableGutters>
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: {
-                  xs: "none",
-                  md: "flex",
-                },
-                flexDirection: "column",
-                justifyContent: "space-between",
-                height: "40%",
-              }}>
-              {pages.map((page) => (
-                <LinkButton
-                  disableRipple
-                  key={page}
-                  sx={{
-                    display: "block",
-                    textTransform: "none",
-                    fontWeight: "bold",
-                    fontSize: "1.3rem",
-                    textAlign: "left",
-                  }}>
-                  {page}
-                </LinkButton>
-              ))}
-            </Box>
-          </Toolbar>
+        <Container
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            padding: {
+              sm: "0",
+            },
+            flexDirection: {
+              lg: "column",
+            },
+            height: "40%",
+          }}>
+          {pages.map((page) => (
+            <SideBarLink path={page.path} key={page.title} title={page.title} />
+          ))}
         </Container>
       </SideBar>
-      <NavBarBox>
-        <AppBar color='inherit' position='fixed' sx={{ boxShadow: "none" }}>
-          <Toolbar>
-            {pages.map((page) => (
-              <LinkButton
-                disableRipple
-                key={page}
-                sx={{
-                  display: "block",
-                  textTransform: "none",
-                  fontWeight: "bold",
-                  fontSize: "1rem",
-                  textAlign: "center",
-                  mx: "auto",
-                  background: "white",
-                }}>
-                {page}
-              </LinkButton>
-            ))}
-          </Toolbar>
-        </AppBar>
-      </NavBarBox>
     </>
   );
 };

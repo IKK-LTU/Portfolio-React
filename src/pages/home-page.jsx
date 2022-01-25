@@ -5,30 +5,22 @@ import { styled } from "@mui/material/styles";
 import ContactMeButton from "../components/buttons/contactMeButton";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
+  padding: 0,
+
   [theme.breakpoints.down("xl")]: {
-    margin: "auto",
-    h1: { fontSize: "2rem" },
-    p: { fontSize: "2rem" },
-  },
-  [theme.breakpoints.up("md")]: {
-    width: "60%",
-    margin: "auto",
-    h1: { fontSize: "2rem" },
-    p: { fontSize: "2rem" },
+    padding: 0,
   },
   [theme.breakpoints.down("lg")]: {
-    paddingLeft: "20%",
-    width: "80%",
+    width: "100%",
+    span: { fontSize: "1rem" },
   },
-  [theme.breakpoints.down("md")]: {
-    paddingLeft: "5%",
-    width: "90%",
-    h1: { fontSize: "1.5rem" },
-    p: { fontSize: "1.5rem" },
+  [theme.breakpoints.down("sm")]: {
+    h1: { fontSize: "1.4rem" },
+    span: { fontSize: ".8rem" },
   },
 }));
 
-const LandingpageContainer = () => {
+const HomePage = () => {
   return (
     <StyledContainer
       sx={{
@@ -37,6 +29,7 @@ const LandingpageContainer = () => {
         justifyContent: "space-between",
         margin: "auto",
         height: "40%",
+        width: "70%"
       }}>
       <Typography variant='h1' sx={{ fontSize: 42 }}>
         Hi,
@@ -52,4 +45,4 @@ const LandingpageContainer = () => {
   );
 };
 
-export default LandingpageContainer;
+export default HomePage;

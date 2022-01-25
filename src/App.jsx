@@ -1,40 +1,30 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
-
-import SideBar from "./components/sideBar/sideBar";
-import LandingpageContainer from "./pages/home-page.jsx";
-import ProjectsContainer from "./pages/projects-page";
 import theme from "./styles/lightTheme";
+// import { TransitionGroup, CSSTransition } from "react-transition-group";
 import PageLayout from "./components/layouts/page-layout";
+import HomePage from "./pages/home-page.jsx";
+import ProjectsPage from "./pages/projects-page";
+import BlogPage from "./pages/blog-page";
+import ContactsPage from "./pages/contacts-page";
 const { lightTheme } = theme;
 
 const App = () => {
   return (
     <CssBaseline>
       <ThemeProvider theme={lightTheme}>
-        <SideBar sx={{ position: "sticky" }} />
-        <PageLayout
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            height: "100vh",
-            width: "100%",
-          }}>
-          <LandingpageContainer />
-        </PageLayout>
-        <PageLayout
-          maxWidth
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            height: "100vh",
-            width: "100%",
-            background:
-              "linear-gradient(180deg, rgba(244, 244, 245, 0.9) 0%, #FFFFFF 22.54%, rgba(255, 255, 255, 0.682692) 78.32%, #F4F4F5 100%), #FFFFFF",
-          }}>
-          <ProjectsContainer />
-        </PageLayout>
+        <BrowserRouter>
+          <Routes>
+              <Route path='/' element={<PageLayout />}>
+                <Route index element={<HomePage />} />
+                <Route path='/projects-page' element={<ProjectsPage />} />
+                <Route path='/blog-page' element={<BlogPage />} />
+                <Route path='/contacts-page' element={<ContactsPage />} />
+              </Route>
+          </Routes>
+        </BrowserRouter>
       </ThemeProvider>
     </CssBaseline>
   );

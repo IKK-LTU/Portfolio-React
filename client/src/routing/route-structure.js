@@ -51,6 +51,10 @@ export default [
         pageName: "BlogsPage",
       },
       {
+        path: "contacts-page",
+        pageName: "BlogsPage",
+      },
+      {
         path: "login",
         pageName: "LoginPage",
         auth: VISITOR,

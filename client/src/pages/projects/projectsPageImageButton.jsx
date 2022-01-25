@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import ProjectsData from "./projectsData";
 
-function projectsPageImageButton() {
+function ProjectsPageImageButton() {
   return (
     <Box
       sx={{
@@ -23,4 +23,4 @@ function projectsPageImageButton() {
   );
 }
 
-export default projectsPageImageButton;
+export default ProjectsPageImageButton;

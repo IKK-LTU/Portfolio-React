@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Box } from "@mui/material";
 import ProjectsPageImageButton from "./projects/projectsPageImageButton";
 
-function projectsContainer() {
+const ProjectsContainer = () => {
   return (
     <Container
       sx={{ textAlign: "center", fontSize: 30, width: "100%", height: "100%" }}>
@@ -32,4 +32,4 @@ function projectsContainer() {
   );
 }
 
-export default projectsContainer;
+export default ProjectsContainer;

@@ -6,7 +6,8 @@ import {
   LOGGED_IN,
   PROJECTS_MANAGER,
   BLOG_MANAGER,
-} from "./auth-types";
+} from "./auth-types"; 
+
 import RequireVisitor from "./require-Visitor";
 import RequireAdmin from "./require-Admin";
 import RequireLoggedIn from "./require-LoggedIn";
@@ -72,7 +73,9 @@ const buildRouteRecursive = ({ path, pageName, auth, children }) => {
 
 const Router = () => (
   <BrowserRouter>
-    <Routes>{routeStructure.map(buildRouteRecursive)}</Routes>
+    <Routes>
+      {routeStructure.map(buildRouteRecursive)}
+    </Routes>
   </BrowserRouter>
 );
 

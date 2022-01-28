@@ -38,5 +38,4 @@ const buildRoute = (allPaths, { path, children, pageName }) => {
 };
 
 const routes = routeStructure.reduce(buildRoute, {});
-
 export default routes;

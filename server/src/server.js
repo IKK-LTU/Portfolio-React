@@ -26,6 +26,7 @@ server.use(express.json());
 server.use('/api/auth', authRouter);
 server.use('/api/users', usersRouter);
 
+
 // Serveriui perduodamos užklausos, kurios bus gautos į šio kompiuterio 5000'inį port'ą
 server.listen(SERVER_PORT, () => {
   console.log(`serveris veikia ant http://localhost:${SERVER_PORT}/`);

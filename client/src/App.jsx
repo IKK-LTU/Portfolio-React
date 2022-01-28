@@ -4,10 +4,10 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./styles/lightTheme";
 import Router from "./routing/router";
-import store from "./store";
+import store from "./store/index";
 
 const { lightTheme } = theme;
-
+console.log(lightTheme);
 const App = () => {
   return (
     <CssBaseline>
@@ -21,3 +21,4 @@ const App = () => {
 };
 
 export default App;
+

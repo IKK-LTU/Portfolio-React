@@ -20,6 +20,10 @@ const lightTheme = createTheme({
     info: {
       main: "#0b77bf",
     },
+    background: {
+      default: "#000",
+      paper: "#000",
+    },
   },
   typography: {
     fontFamily: [

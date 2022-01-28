@@ -10,7 +10,7 @@ import {
 export default [
   {
     path: "/",
-    pageName: "PageLayout",
+    pageName: `PageLayout`,
     children: [
       {
         path: null,
@@ -22,14 +22,15 @@ export default [
       },
       {
         path: "blog-page",
-        pageName: "BlogsPage",
+        pageName: "BlogPage",
       },
       {
         path: "contacts-page",
-        pageName: "BlogsPage",
+        pageName: "ContactsPage",
+        auth: VISITOR,
       },
       {
-        path: "login",
+        path: "admin",
         pageName: "LoginPage",
         auth: VISITOR,
       },
@@ -41,7 +42,7 @@ export default [
   },
   {
     path: "/dashboard",
-    pageName: "DashboardLayout",
+    pageName: "PageLayout",
     children: [
       {
         path: "profile",
@@ -55,14 +56,14 @@ export default [
       },
       {
         path: "projects-panel",
-        pageName: "UsersPanelPage",
+        pageName: "ProjectsManagerPage",
         auth: PROJECTS_MANAGER,
       },
       {
-        path: "blogs-panel",
-        pageName: "UsersPanelPage",
+        path: "blog-panel",
+        pageName: "BlogManagerPage",
         auth: BLOG_MANAGER,
       },
     ],
-  }
+  },
 ];

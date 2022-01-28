@@ -60,7 +60,6 @@ const buildRouteRecursive = ({ path, pageName, auth, children }) => {
   ) : (
     <Page />
   );
-
   return (
     <Route
       key={pageName}
@@ -78,5 +77,4 @@ const Router = () => (
     </Routes>
   </BrowserRouter>
 );
-
 export default Router;

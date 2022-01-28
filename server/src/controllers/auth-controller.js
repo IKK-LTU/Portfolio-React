@@ -45,36 +45,14 @@ export const register = (req, res) => {
   database.data.users.push({ name: "Klemensas" });
   database.write();
 
-  /*
-    1. Suformuoti Postman'e duomenis ir išsiųsti jog užklausa būtų aptarnauta šiu requestHandler'iu
-      * email
-      * name
-      * surname
-      * password
-      * repeatPassword
-    2. Ar vienodi Slaptažodiai?:
-      * taip ->  Ar tarp esančių vartotojų jau yra toks vartotojo paštas koks gautas užklausos metu?
-        * taip -> grąžinti klaidos pranešimą, kad toks vartotojas jau užsiregistravęs
-        * ne -> 
-          * Sukurti vartotoją su tokia struktūra:
-            * id -> sugeneruooti
-            * email
-            * name
-            * surname
-            * password
-            * role - USER
-          * išsiųsti atsakymą su sukurtu vartotoju ir  dirbitnį token'ą
-          
-      * ne(nesutampa slaptažodžiai) -> Siųsti klaidos pranešimą, jog slaptažodžiai nesutampa
-
-    iki 19: darbas savarankiškai
-    iki 19:10 pertrauka
-    19:10 - sufleriai | klausimai -> 19:15
-    iki 19:30 užduoties pabaigimas
-  */
   res.status(200).json({ message: "Užaugus būsiu registracija" });
 };
 
 export const checkEmail = (req, res) => {
   res.status(200).json({ message: "Užaugęs būsiu pašto patikrinimas" });
+};
+
+export const showProjects = (req, res) => {
+  const { projects } = database.data;
+  res.status(200).json({projects});
 };

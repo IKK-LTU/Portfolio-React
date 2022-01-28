@@ -7,7 +7,7 @@ import SideBar from "../sideBar/sideBar";
 const StyledContainer = styled(Container)(({ theme }) => ({
   [theme.breakpoints.down("lg")]: {
     width: "100vw",
-    maxWidht:'100vw',
+    maxWidht: "100vw",
     padding: 0,
   },
   [theme.breakpoints.down("md")]: {
@@ -18,11 +18,8 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   },
 }));
 
-const PageLayout = () =>  (
+const PageLayoutDark = () => (
   <>
-    <SideBar
-      sx={{ position: "sticky", backgroundColor: "#000" }}
-    />
     <StyledContainer
       sx={{
         display: "flex",
@@ -30,9 +27,10 @@ const PageLayout = () =>  (
         height: "100vh",
         width: "100vw",
       }}>
+    <SideBar sx={{ position: "sticky" }} />
       <Outlet />
     </StyledContainer>
   </>
-)
+);
 
-export default PageLayout;
+export default PageLayoutDark;

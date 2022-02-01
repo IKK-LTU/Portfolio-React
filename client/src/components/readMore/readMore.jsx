@@ -31,12 +31,12 @@ const ReadMoreFeature = (props) => {
     },
   }));
   const TypographyButton = styled(Typography)(({ theme }) => ({
-    color: "black",
+    color: "#f59390",
     cursor: "pointer",
     transition: "0.3s ease-in-out",
     textDecoration: "none",
     textAlign: "center",
-    fontWeight: "bold",
+    letterSpacing: "2px",
     ":hover": {
       color: "#79815E",
       textDecoration: "underline",

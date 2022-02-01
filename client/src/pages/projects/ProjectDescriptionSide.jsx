@@ -1,11 +1,11 @@
 import React from 'react';
-import { Box, Typography, Link } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Box, Typography } from "@mui/material";
 import ReadMore from '../../components/readMore/readMore'
-
+import LinkToProject from './LinkToProject'
 const ProjectDescriptionSide = () => {
   return (
     <Box
+      component='article'
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -13,10 +13,10 @@ const ProjectDescriptionSide = () => {
         width: "45%",
         color: "#fff",
       }}>
-      <Typography varian='h1' sx={{ color: "#FF7D7D", textAlign: "center" }}>
+      <Typography varian='h2' component='h2' sx={{ color: "#FF7D7D",fontSize:'1.2rem', textAlign: "center" }}>
         New feature - Contact Form
       </Typography>
-      <ReadMore 
+      <ReadMore
         text='
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
         error facilis dolores ipsam at sequi commodi ad, voluptatibus porro
@@ -35,24 +35,8 @@ const ProjectDescriptionSide = () => {
         atque quisquam facilis. Neque, distinctio?
      '
       />
-      <Link
-        href='#'
-        underline='hover'
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-        }}>
-        <ArrowForwardIcon
-          sx={{
-            backgroundColor: "white",
-            borderRadius: "3px",
-            mr: 2,
-          }}
-        />
-        <Typography varian='p'>Project Link</Typography>
-      </Link>
+      <LinkToProject linkTo='./' />
     </Box>
   );
 };
-
 export default ProjectDescriptionSide;

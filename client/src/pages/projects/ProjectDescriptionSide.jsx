@@ -2,17 +2,29 @@ import React from 'react';
 import { Box, Typography } from "@mui/material";
 import ReadMore from '../../components/readMore/readMore'
 import LinkToProject from './LinkToProject'
+import { styled } from "@mui/material/styles";
+
 const ProjectDescriptionSide = () => {
+const StyledProjectDescriptionBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  width: "45%",
+  color: "#fff",
+  [theme.breakpoints.down("xl")]: {
+  },
+  [theme.breakpoints.down("lg")]: {
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "100%",
+  },
+  [theme.breakpoints.down("sm")]: {
+  },
+}));
+
   return (
-    <Box
-      component='article'
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        width: "45%",
-        color: "#fff",
-      }}>
+    <StyledProjectDescriptionBox
+      component='article'>
       <Typography varian='h2' component='h2' sx={{ color: "#FF7D7D",fontSize:'1.2rem', textAlign: "center" }}>
         New feature - Contact Form
       </Typography>
@@ -35,8 +47,8 @@ const ProjectDescriptionSide = () => {
         atque quisquam facilis. Neque, distinctio?
      '
       />
-      <LinkToProject linkTo='./' />
-    </Box>
+      <LinkToProject  linkTo='./' />
+    </StyledProjectDescriptionBox>
   );
 };
 export default ProjectDescriptionSide;

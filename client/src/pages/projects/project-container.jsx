@@ -6,7 +6,7 @@ import { styled } from "@mui/material/styles";
 import ProjectDescriptionBox from './ProjectDescriptionSide';
 
 
-const StyledProjectBox = styled(Box)(({ theme }) => ({
+const StyledProjectContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   height: "100%",
@@ -15,6 +15,29 @@ const StyledProjectBox = styled(Box)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   margin: "auto",
+  [theme.breakpoints.down("xl")]: {
+    width: "80%",
+    padding: "1.5rem 10%",
+  },
+  [theme.breakpoints.down("lg")]: {
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "90%",
+    padding: "1rem 5%",
+  },
+}));
+const StyledProjectBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  height: "80%",
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {
+    flexDirection: "column",
+  },
+  [theme.breakpoints.down("sm")]: {
+    widht: "100%",
+  },
 }));
 const DateText = styled(Typography)(({ theme }) => ({
   textAlign: "right",
@@ -24,19 +47,14 @@ const DateText = styled(Typography)(({ theme }) => ({
 
 const projectContainer = (props) => {
   return (
-    <StyledProjectBox sx={{ backgroundColor: `${props.color}`,color:'red' }}>
+    <StyledProjectContainer sx={{ backgroundColor: `${props.color}`,color:'red' }}>
       {props.bgColor}
-      <DateText varian='p'>2021-01-30</DateText>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          height: "80%",
-        }}>
+      <DateText varian='p'>{props.projectDate }</DateText>
+      <StyledProjectBox>
         <ImageBox />
         <ProjectDescriptionBox />
-      </Box>
-    </StyledProjectBox>
+      </StyledProjectBox>
+    </StyledProjectContainer>
   );
 };
 

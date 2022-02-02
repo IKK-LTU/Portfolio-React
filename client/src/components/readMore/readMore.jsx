@@ -9,6 +9,7 @@ const ReadMoreFeature = (props) => {
     setReadMore(!readMore);
   };
   console.log(invisibleText === "");
+
   const ScrollBox = styled(Box)(({ theme }) => ({
     maxHeight: "80%",
     scrollbarWidth: " none",
@@ -29,14 +30,24 @@ const ReadMoreFeature = (props) => {
     "::-webkit-scrollbar-thumb:hover": {
       background: "#6a7052",
     },
+    [theme.breakpoints.down("xl")]: {
+    },
+    [theme.breakpoints.down("lg")]: {
+    },
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      margin: "2rem auto",
+    },
   }));
   const TypographyButton = styled(Typography)(({ theme }) => ({
+    display: "inline",
     color: "#f59390",
     cursor: "pointer",
     transition: "0.3s ease-in-out",
     textDecoration: "none",
     textAlign: "center",
     letterSpacing: "2px",
+    width: "30px",
     ":hover": {
       color: "#79815E",
       textDecoration: "underline",
@@ -47,16 +58,18 @@ const ReadMoreFeature = (props) => {
     <ScrollBox>
       <Typography>
         {visibleText}
-        {invisibleText === "" ? null : " ..."}
+        {invisibleText === "" ? null : "... "}
+        {invisibleText === "" ? null : readMore ? (
+          <>
+            <Typography>
+              {invisibleText}{" "}
+              <TypographyButton onClick={Show}>Less</TypographyButton>
+            </Typography>
+          </>
+        ) : (
+          <TypographyButton onClick={Show}>Read more</TypographyButton>
+        )}
       </Typography>
-      {invisibleText === "" ? null : readMore ? (
-        <>
-          <Typography>{invisibleText}</Typography>
-          <TypographyButton onClick={Show}>Less</TypographyButton>
-        </>
-      ) : (
-        <TypographyButton onClick={Show}>More</TypographyButton>
-      )}
     </ScrollBox>
   );
 };

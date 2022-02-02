@@ -6,6 +6,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 const StyledLinkToProject = styled(Link)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
+  margin:'1rem 0'
 }));
 
 const LinkToProject = (props) => {

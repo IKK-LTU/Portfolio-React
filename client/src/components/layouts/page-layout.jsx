@@ -9,6 +9,7 @@ const StyledContainer = styled(Container)(({ theme }) => ({
     width: "100vw",
     maxWidht:'100vw',
     padding: 0,
+    margin:'auto',
   },
   [theme.breakpoints.down("md")]: {
     padding: 0,
@@ -27,8 +28,7 @@ const PageLayout = () =>  (
       sx={{
         display: "flex",
         flexDirection: "row",
-        height: "100vh",
-        width: "100vw",
+        width: "80%",
       }}>
       <Outlet />
     </StyledContainer>

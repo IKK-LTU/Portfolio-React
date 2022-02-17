@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+
 const ReadMoreFeature = (props) => {
   const visibleText = props.text.substring(0, 490);
   const invisibleText = props.text.substring(500);
@@ -38,7 +39,8 @@ const ReadMoreFeature = (props) => {
       width: "100%",
       margin: "2rem auto",
     },
-  }));
+   }));
+  
   const TypographyButton = styled(Typography)(({ theme }) => ({
     display: "inline",
     color: "#f59390",

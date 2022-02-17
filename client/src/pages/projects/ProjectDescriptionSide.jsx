@@ -25,7 +25,7 @@ const StyledProjectDescriptionBox = styled(Box)(({ theme }) => ({
   return (
     <StyledProjectDescriptionBox
       component='article'>
-      <Typography varian='h2' component='h2' sx={{ color: "#FF7D7D",fontSize:'1.2rem', textAlign: "center" }}>
+      <Typography varian='h2' component='h2' sx={{ color: "#FF7D7D",fontSize:'1.2rem', textAlign: "center",py:2 }}>
         New feature - Contact Form
       </Typography>
       <ReadMore

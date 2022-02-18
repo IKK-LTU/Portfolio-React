@@ -26,7 +26,7 @@ const ResponsiveAppBar = () => {
   const dispatch = useDispatch();
   const handleLogout = () => dispatch(logout(loggedIn));
   const handleloginSuccess = () => dispatch(loginSuccess(loggedIn));
-
+  console.log(routes.ContactsPage);
   return (
     <>
       {loggedIn ? (

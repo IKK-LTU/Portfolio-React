@@ -25,11 +25,6 @@ export default [
         pageName: "BlogPage",
       },
       {
-        path: "contacts-page",
-        pageName: "ContactsPage",
-        auth: VISITOR,
-      },
-      {
         path: "admin",
         pageName: "LoginPage",
         auth: VISITOR,
@@ -37,6 +32,16 @@ export default [
       {
         path: "*",
         pageName: "ErrorPage",
+      },
+    ],
+  },
+  {
+    path: "/",
+    pageName: `PageLayoutDark`,
+    children: [
+      {
+        path: "contacts-page",
+        pageName: "ContactsPage",
       },
     ],
   },

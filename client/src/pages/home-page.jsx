@@ -40,7 +40,7 @@ const HomePage = () => {
         grow. I think it’s must to seek perfection and then you will even
         surprise yourself.
       </Typography>
-      <ContactMeButton />
+      <ContactMeButton buttonText="Contact me" />
     </StyledContainer>
   );
 };

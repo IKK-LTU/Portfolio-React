@@ -1,35 +1,31 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { Typography, Button } from "@mui/material";
+import { Button } from "@mui/material";
 
 const StyledButton = styled(Button)(({ theme }) => ({
   background: theme.palette.primary.main,
   color: theme.palette.primary.contrastText,
   textTransform: "none",
   borderRadius: "1px",
-  width: "200px",
   height: "44px",
   transition: "0.5s",
+  alignItems:'center',
   ":hover": {
     background: theme.palette.secondary.main,
-    width: "250px",
     color: theme.palette.text.primary,
   },
   [theme.breakpoints.down("sm")]: {
-    paddingLeft: "5%",
-    width: "95%",
+    width: "100%",
     ":hover": {
-      width: "100%",
+      width: "50%",
     },
   },
 }));
-const contactMeButton = () => {
+const ContactMeButton = (props) => {
   return (
-    <div>
-      <StyledButton>
-        <Typography variant='p'>Contact Me</Typography>
+      <StyledButton disableRipple component='button' variant='p'>
+        {props.buttonText}
       </StyledButton>
-    </div>
   );
 };
-export default contactMeButton;
+export default ContactMeButton;

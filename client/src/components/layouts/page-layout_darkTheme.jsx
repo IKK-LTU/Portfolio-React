@@ -1,36 +1,33 @@
 import React from "react";
 import { styled } from "@mui/material/styles";
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import SideBar from "../sideBar/sideBar";
 
-const StyledContainer = styled(Container)(({ theme }) => ({
-  [theme.breakpoints.down("lg")]: {
-    width: "100vw",
-    maxWidht: "100vw",
+const StyledContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  height: "100vh",
+  width: "100vw",
+  background: "#1C1C1C",
+  color: "white",
+
+  [theme.breakpoints.up("sm")]: {},
+
+  [theme.breakpoints.up("md")]: {
     padding: 0,
   },
-  [theme.breakpoints.down("md")]: {
+  [theme.breakpoints.up("lg")]: {
+    height: "100vh",
     padding: 0,
-  },
-  [theme.breakpoints.down("sm")]: {
-    width: "90%",
   },
 }));
 
 const PageLayoutDark = () => (
-  <>
-    <StyledContainer
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        height: "100vh",
-        width: "100vw",
-      }}>
-    <SideBar sx={{ position: "sticky" }} />
+    <StyledContainer>
+    <SideBar sx={{ position: "sticky"}} />
       <Outlet />
     </StyledContainer>
-  </>
 );
 
 export default PageLayoutDark;

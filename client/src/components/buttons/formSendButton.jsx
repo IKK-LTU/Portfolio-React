@@ -9,33 +9,18 @@ const StyledButton = styled(Button)(({ theme }) => ({
   borderRadius: "1px",
   height: "44px",
   transition: "0.5s",
-  alignItems: "center",
-  width: "100%",
+  alignItems:'center',
   ":hover": {
     background: theme.palette.secondary.main,
     color: theme.palette.text.primary,
   },
-  [theme.breakpoints.up("sm")]: {
-    width: "100%",
-  },
-  [theme.breakpoints.up("md")]: {
-    width: "30%",
-    ":hover": {
-      width: "35%",
-    },
-  },
-  [theme.breakpoints.up("xl")]: {
-    width: "20%",
-    ":hover": {
-      width: "25%",
-    },
-  },
 }));
-const ContactMeButton = (props) => {
+const FormSendButton = (props) => {
   return (
-      <StyledButton disableRipple component='button' variant='p'>
+    <StyledButton disableRipple component='button' variant='p'>
         {props.buttonText}
       </StyledButton>
-  );
-};
-export default ContactMeButton;
+  )
+}
+
+export default FormSendButton

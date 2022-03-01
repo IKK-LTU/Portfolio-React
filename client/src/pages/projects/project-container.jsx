@@ -47,7 +47,7 @@ const DateText = styled(Typography)(({ theme }) => ({
 
 const projectContainer = (props) => {
   return (
-    <StyledProjectContainer sx={{ backgroundColor: `${props.color}`,color:'red' }}>
+    <StyledProjectContainer sx={{ background: `${props.color}`,color:'red' }}>
       {props.bgColor}
       <DateText varian='p'>{props.projectDate }</DateText>
       <StyledProjectBox>

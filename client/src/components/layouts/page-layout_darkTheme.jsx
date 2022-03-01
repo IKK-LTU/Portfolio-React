@@ -9,7 +9,7 @@ const StyledContainer = styled(Box)(({ theme }) => ({
   flexDirection: "column",
   height: "100vh",
   width: "100vw",
-  background: "#1C1C1C",
+  background: "#000000 linear-gradient(315deg, #2d3436 0%, #000000 74%)",
   color: "white",
 
   [theme.breakpoints.up("sm")]: {},
@@ -24,10 +24,10 @@ const StyledContainer = styled(Box)(({ theme }) => ({
 }));
 
 const PageLayoutDark = () => (
-    <StyledContainer>
-    <SideBar sx={{ position: "sticky"}} />
-      <Outlet />
-    </StyledContainer>
+  <StyledContainer>
+    <SideBar sx={{ position: "sticky" }} />
+    <Outlet />
+  </StyledContainer>
 );
 
 export default PageLayoutDark;

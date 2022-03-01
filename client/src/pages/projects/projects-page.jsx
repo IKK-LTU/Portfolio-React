@@ -21,9 +21,15 @@ const StyledProjectPageContainer = styled(Box)(({ theme }) => ({
 const ProjectsPage = () => {
   return (
     <StyledProjectPageContainer sx={{}}>
-      <ProjectContainer color='#343434' projectDate='2021-01-30' />
+      <ProjectContainer
+        color='#000 linear-gradient(315deg, #2d3436 0%, #000000 74%)'
+        projectDate='2021-01-30'
+      />
       <ProjectContainer color='#f7f7f7' projectDate='2021-01-30' />
-      <ProjectContainer color='#343434' projectDate='2021-01-30' />
+      <ProjectContainer
+        color='#000 linear-gradient(315deg, #2d3436 0%, #000000 74%)'
+        projectDate='2021-01-30'
+      />
     </StyledProjectPageContainer>
   );
 }

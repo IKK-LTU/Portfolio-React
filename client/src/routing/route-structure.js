@@ -50,6 +50,16 @@ export default [
     pageName: "PageLayout",
     children: [
       {
+        path: null,
+        pageName: "LoginPage",
+        auth: LOGGED_IN,
+      },
+      {
+        path: "register",
+        pageName: "RegistrtationPage",
+        auth: LOGGED_IN,
+      },
+      {
         path: "profile",
         pageName: "ProfilePage",
         auth: LOGGED_IN,

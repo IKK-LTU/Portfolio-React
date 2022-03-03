@@ -1,10 +1,7 @@
 import React from "react";
 import { Container, Box, Typography, TextField } from "@mui/material";
-import FormSendButton from "../components/buttons/formSendButton";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import EmailIcon from "@mui/icons-material/Email";
-import CallIcon from "@mui/icons-material/Call";
+import FormSendButton from "../../components/buttons/formSendButton";
+import ContactIcons from "../../components/contactsIcons/contactIcons";
 import { styled } from "@mui/material/styles";
 
 const StyledFormBox = styled(Box)(({ theme }) => ({
@@ -19,18 +16,20 @@ const StyledFormBox = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up("sm")]: {
     width: "90%",
     height: "80%",
-    padding: "3rem 1rem",
+    padding: "3rem 2rem",
     margin: "10% auto",
   },
   [theme.breakpoints.up("md")]: {
     width: "50%",
     height: "70%",
     margin: "15% auto",
+    padding: "3rem 3rem",
   },
   [theme.breakpoints.up("lg")]: {
     width: "50%",
-    height: "65%",
-    margin: "20% auto",
+    height: "70%",
+    margin: "15% auto",
+    padding: "4rem",
   },
 }));
 const ContactsPage = () => {
@@ -59,10 +58,7 @@ const ContactsPage = () => {
             fontSize: "3rem",
             pt: 3,
           }}>
-          <GitHubIcon sx={{ fontSize: "2.5rem", color: "black" }} />
-          <LinkedInIcon sx={{ fontSize: "2.5rem", color: "#0e76a8" }} />
-          <EmailIcon sx={{ fontSize: "2.5rem", color: "red" }} />
-          <CallIcon sx={{ fontSize: "2.5rem", color: "#529552" }} />
+        <ContactIcons/>
         </Box>
       </StyledFormBox>
     </Container>

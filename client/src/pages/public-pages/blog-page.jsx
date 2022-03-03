@@ -1,6 +1,6 @@
 import React from "react";
 // import { styled } from "@mui/material/styles";
-import BlogCard from "../components/blogCard/blogCard";
+import BlogCard from "../../components/blogCard/blogCard";
 
 import { Container } from "@mui/material";
 const BlogPage = () => {

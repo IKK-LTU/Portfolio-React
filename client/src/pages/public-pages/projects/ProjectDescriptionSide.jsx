@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography } from "@mui/material";
-import ReadMore from '../../components/readMore/readMore'
+import ReadMore from '../../../components/readMore/readMore'
 import LinkToProject from './LinkToProject'
 import { styled } from "@mui/material/styles";
 

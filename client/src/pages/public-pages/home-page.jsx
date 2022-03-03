@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-import ContactMeButton from "../components/buttons/contactMeButton";
+import ContactMeButton from "../../components/buttons/contactMeButton";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   display: "flex",

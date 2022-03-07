@@ -6,12 +6,10 @@ import theme from "./styles/lightTheme";
 import Router from "./routing/router";
 import store from "./store/index";
 
-const { lightTheme } = theme;
-console.log(lightTheme);
 const App = () => {
   return (
     <CssBaseline>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={theme}>
         <ReduxProvider store={store}>
           <Router />
         </ReduxProvider>

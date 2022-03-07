@@ -16,7 +16,6 @@ import RequireProjectsManager from "./require-ProjectsManager";
 
 import routeStructure from "./route-structure";
 import routePageEnum from "./route-page-enum";
-
 const addRouteProtection = {
   [VISITOR]: (Page) => (
     <RequireVisitor>
@@ -30,7 +29,7 @@ const addRouteProtection = {
   ),
   [LOGGED_IN]: (Page) => (
     <RequireLoggedIn>
-      <Page />
+      <Page/>
     </RequireLoggedIn>
   ),
   [BLOG_MANAGER]: (Page) => (
@@ -46,35 +45,41 @@ const addRouteProtection = {
 };
 
 const buildRouteRecursive = ({ path, pageName, auth, children }) => {
-    const Page = routePageEnum[pageName];
+  const Page = routePageEnum[pageName];
   if (children) {
+    const layout = addRouteProtection[auth] ? (
+      addRouteProtection[auth](Page)
+    ) : (
+      <Page />
+    );
+
     return (
-      <Route key={pageName} path={path} element={<Page />}>
+      <Route key={pageName} path={path} element={layout}>
         {children.map(buildRouteRecursive)}
       </Route>
     );
   }
 
-  const element = addRouteProtection[auth] ? (
+  const page = addRouteProtection[auth] ? (
     addRouteProtection[auth](Page)
   ) : (
     <Page />
   );
+
   return (
     <Route
       key={pageName}
       path={path ?? undefined}
       index={path === null}
-      element={element}
+      element={page}
     />
   );
 };
 
 const Router = () => (
   <BrowserRouter>
-    <Routes>
-      {routeStructure.map(buildRouteRecursive)}
-    </Routes>
+    <Routes>{routeStructure.map(buildRouteRecursive)}</Routes>
   </BrowserRouter>
 );
+
 export default Router;

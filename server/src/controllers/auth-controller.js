@@ -1,24 +1,23 @@
 import database from "../database/index.js";
+import UserViewModel from "../view-models/user-view-model.js";
 
 export const login = (req, res) => {
   const { email, password } = req.body;
-  const { users } = database.data;
+  const { users } = JSON.parse(JSON.stringify(database.data));
 
   const foundUser = users.find((x) => x.email === email);
+
   if (!foundUser) {
     // Nerastas Vartotojas
     res.status(404).json({
-    
       message: "Vartotojas su tokiu paštu nerastas",
     });
     return;
   }
 
   if (foundUser.password === password) {
-    delete foundUser.password;
-    // Viskas gerai
     res.status(200).json({
-      user: foundUser,
+      user: new UserViewModel(foundUser),
       token: "Kazkada busiu tikras tokenas",
     });
     return;
@@ -31,28 +30,22 @@ export const login = (req, res) => {
 };
 
 export const register = (req, res) => {
-  const { email, name, surname, password, repeatPassword } = req.body;
-  if (password !== password) {
-    res.status(400).json({
-      message: "Slaptažodžiai nesutampa",
-    });
-    return;
-  }
-
-  /*
-    įrašymo pvz.
-  */
-  database.data.users.push({ name: "Klemensas" });
-  database.write();
-
   res.status(200).json({ message: "Užaugus būsiu registracija" });
 };
 
 export const checkEmail = (req, res) => {
-  res.status(200).json({ message: "Užaugęs būsiu pašto patikrinimas" });
-};
-
-export const showProjects = (req, res) => {
-  const { projects } = database.data;
-  res.status(200).json({projects});
+  const { email } = req.query;
+  const database = JSON.parse(JSON.stringify(database.data));
+  const emailIsTaken = Boolean(database.users.find((x) => x.email === email));
+  if (emailIsTaken) {
+    res.status(200).json({
+      available: false,
+      message: "Vartotojas su tokiu paštu jau egzistuoja",
+    });
+  } else {
+    res.status(200).json({
+      available: true,
+      message: "Vartotojas galimas",
+    });
+  }
 };

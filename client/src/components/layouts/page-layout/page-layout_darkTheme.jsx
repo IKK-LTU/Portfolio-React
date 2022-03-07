@@ -2,7 +2,8 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import SideBar from "../sideBar/sideBar";
+import SideBar from "../../navBars/visitorsSideBar/sideBar";
+
 
 const StyledContainer = styled(Box)(({ theme }) => ({
   display: "flex",

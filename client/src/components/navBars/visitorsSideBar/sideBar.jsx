@@ -1,11 +1,9 @@
 import * as React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { loginSuccess, logout, selectAuth } from "../../store/auth";
 import { styled } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
-import { Container, Button } from "@mui/material";
+import { Container } from "@mui/material";
 import SideBarLink from "./sideBar-link";
-import routes from "../../routing/routes";
+import routes from "../../../routing/routes";
 
 const SideBar = styled(AppBar)(({ theme }) => ({
   [theme.breakpoints.down("lg")]: {
@@ -20,16 +18,9 @@ const SideBar = styled(AppBar)(({ theme }) => ({
     width: "95%",
   },
 }));
-
 const ResponsiveAppBar = () => {
-  const { loggedIn } = useSelector(selectAuth);
-  const dispatch = useDispatch();
-  const handleLogout = () => dispatch(logout(loggedIn));
-  const handleloginSuccess = () => dispatch(loginSuccess(loggedIn));
-  console.log(routes.ContactsPage);
   return (
     <>
-      {loggedIn ? (
         <SideBar
           color='inherit'
           sx={{
@@ -58,7 +49,6 @@ const ResponsiveAppBar = () => {
               key={routes.HomePage}
               title={"Home"}
             />
-            <Button onClick={handleLogout}>Click Logout</Button>
 
             <SideBarLink
               path={routes.ProjectsPage}
@@ -77,32 +67,6 @@ const ResponsiveAppBar = () => {
             />
           </Container>
         </SideBar>
-      ) : (
-        <SideBar
-          color='inherit'
-          sx={{
-            position: "sticky",
-            left: "0",
-            width: "100%",
-            margin: "auto",
-            height: "60px",
-          }}>
-          <Container
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "100%",
-            }}>
-            <SideBarLink
-              path={routes.LoginPage}
-              key={routes.LoginPage}
-              title={"Login"}
-            />
-            <Button onClick={handleloginSuccess}>Click Login</Button>
-          </Container>
-        </SideBar>
-      )}
     </>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "@mui/material/styles";
 import { Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
-import SideBar from "../sideBar/sideBar";
+import SideBar from "../../navBars/visitorsSideBar/sideBar";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
   [theme.breakpoints.down("lg")]: {

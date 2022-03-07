@@ -9,7 +9,7 @@ const ReadMoreFeature = (props) => {
   const Show = () => {
     setReadMore(!readMore);
   };
-  console.log(invisibleText === "");
+  // console.log(invisibleText === "");
 
   const ScrollBox = styled(Box)(({ theme }) => ({
     maxHeight: "80%",

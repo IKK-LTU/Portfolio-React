@@ -3,7 +3,7 @@ import {
   login,
   register,
   checkEmail,
-  showProjects,
+  // showProjects,
 } from "../controllers/auth-controller.js";
 
 const router = express.Router();
@@ -14,6 +14,6 @@ router.post('/login', login);
 
 router.get('/checkEmail', checkEmail);
 
-router.get("/projects", showProjects);
+// router.get("/projects", showProjects);
 
 export default router;

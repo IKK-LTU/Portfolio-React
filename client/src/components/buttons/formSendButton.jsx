@@ -17,10 +17,10 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 const FormSendButton = (props) => {
   return (
-    <StyledButton disableRipple component='button' variant='p'>
-        {props.buttonText}
-      </StyledButton>
-  )
+    <StyledButton type='submit' disableRipple component='button' variant='p'>
+      {props.buttonText}
+    </StyledButton>
+  );
 }
 
-export default FormSendButton
+export default FormSendButton;

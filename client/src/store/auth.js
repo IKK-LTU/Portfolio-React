@@ -12,7 +12,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
-    loginSuccess(state, { payload }) {
+    login(state, { payload }) {
       state.loggedIn = true;
       state.redirectTo = payload.redirectTo;
       SessionStorage.set("auth", state);
@@ -24,7 +24,7 @@ const authSlice = createSlice({
     }
   },
 });
-export const { loginSuccess, logout } = authSlice.actions;
+export const { login, logout } = authSlice.actions;
 
 export const selectAuth = (state) => state.auth;
 

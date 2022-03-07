@@ -15,23 +15,22 @@ export default [
       {
         path: null,
         pageName: "HomePage",
+        auth: VISITOR,
       },
       {
         path: "projects-page",
         pageName: "ProjectsPage",
+        auth: VISITOR,
       },
       {
         path: "blog-page",
         pageName: "BlogPage",
+        auth: VISITOR,
       },
       {
         path: "admin",
         pageName: "LoginPage",
         auth: VISITOR,
-      },
-      {
-        path: "*",
-        pageName: "ErrorPage",
       },
     ],
   },
@@ -42,26 +41,23 @@ export default [
       {
         path: "contacts-page",
         pageName: "ContactsPage",
+        auth: VISITOR,
       },
     ],
   },
   {
     path: "/dashboard",
-    pageName: "PageLayout",
+    pageName: "DashboardLayout",
+    auth: LOGGED_IN,
     children: [
       {
         path: null,
-        pageName: "LoginPage",
+        pageName: "ProfilePage",
         auth: LOGGED_IN,
       },
       {
         path: "register",
         pageName: "RegistrtationPage",
-        auth: LOGGED_IN,
-      },
-      {
-        path: "profile",
-        pageName: "ProfilePage",
         auth: LOGGED_IN,
       },
       {

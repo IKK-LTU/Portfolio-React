@@ -7,11 +7,9 @@ import routes from "./routes";
 const RequireLoggedIn = ({ children }) => {
   const { pathname } = useLocation();
   const { loggedIn } = useSelector(selectAuth);
-
   if (!loggedIn) {
-    return <Navigate to={`${routes.LoginPage}?redirectTo=${pathname}`} />;
+    return <Navigate to={`${routes.LoginPage}?redirectTo=${pathname}`}  />;
   }
-
   return children;
 };
 

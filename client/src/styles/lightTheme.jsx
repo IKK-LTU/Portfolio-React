@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 import "./fonts.css";
 
-const lightTheme = createTheme({
+const theme = createTheme({
   palette: {
     type: "light",
     primary: {
@@ -39,9 +39,7 @@ const lightTheme = createTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(","),
-    color: "#79815E",
   },
 });
 
-const theme = { lightTheme };
 export default theme;

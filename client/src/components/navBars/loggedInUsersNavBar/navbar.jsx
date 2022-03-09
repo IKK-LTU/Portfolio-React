@@ -1,11 +1,32 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../store/auth";
-import { Typography, Button, Box, Toolbar, Popover } from "@mui/material";
+import { Button, Box, Toolbar, Popover } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PermIdentityTwoToneIcon from "@mui/icons-material/PermIdentityTwoTone";
 import MeetingRoomTwoToneIcon from "@mui/icons-material/MeetingRoomTwoTone";
+import NavBarLink from "./navbar-link";
+import routes from "../../../routing/routes";
+
+
+const StyledPopperBox = styled(Popover)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  " &	.MuiPaper-root": {
+    borderRadius: "2px",
+    background: "white",
+    padding: "0.5rem",
+  },
+  "& .MuiButton-root": {
+    display: "flex",
+    borderRadius: 0,
+    color: "black",
+    "&:hover": {
+      borderLeft: "1px solid black",
+    },
+  },
+}));
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -13,51 +34,33 @@ const Navbar = () => {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
-  const StyledPopperBox = styled(Popover)(({ theme }) => ({
-    display: "flex",
-    flexDirection: "row",
-    "&:button": {
-      color: "black",
-    },
-    " &	.MuiPaper-root": {
-      borderRadius: "2px",
-      background: "white",
-      padding: "0.5rem",
-    },
-  }));
+  
   return (
-    <Box>
+    <Box sx={{ position: "fixed", width:'100%' }}>
       <Toolbar
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          width: "100%",
           background: "#79815E",
           color: "#2D1C36",
+          height: "50px",
+          boxShadow: 2,
+          px: 4,
         }}>
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
             gap: 5,
+            height: "100%",
           }}>
-          {" "}
-          <Typography variant='h6' component='div' sx={{ cursor: "pointer" }}>
-            Profile
-          </Typography>
-          <Typography variant='h6' component='div' sx={{ cursor: "pointer" }}>
-            Projects
-          </Typography>
-          <Typography variant='h6' component='div' sx={{ cursor: "pointer" }}>
-            Blogs
-          </Typography>
+          <NavBarLink path={routes.ProfilePage} title='Profile' />
+          <NavBarLink path={routes.ProjectsManagerPage} title='Projects' />
+          <NavBarLink path={routes.BlogsManagerPage} title='Blogs' />
         </Box>
         <Box sx={{ display: "flex" }}>
           <AccountCircleIcon
@@ -81,30 +84,16 @@ const Navbar = () => {
             anchorOrigin={{
               vertical: "bottom",
               horizontal: "left",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "right",
             }}>
-            <Button
-              sx={{
-                display: "flex",
-                cursor: "pointer",
-                width: "100%",
-                borderRadius: 0,
-                borderBottom: 1,
-                color: "black",
-              }}
-              disableRipple>
+            <Button disableRipple>
               <PermIdentityTwoToneIcon sx={{ mr: 3 }} />
               Profile
             </Button>
-            <Button
-              sx={{
-                display: "flex",
-                cursor: "pointer",
-                width: "100%",
-                borderRadius: 0,
-                color: "black",
-              }}
-              onClick={() => dispatch(logout())}
-              disableRipple>
+            <Button onClick={() => dispatch(logout())} disableRipple>
               <MeetingRoomTwoToneIcon sx={{ mr: 3 }} />
               Logout
             </Button>
@@ -114,5 +103,4 @@ const Navbar = () => {
     </Box>
   );
 };
-
 export default Navbar;

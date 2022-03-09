@@ -10,7 +10,6 @@ const requester = axios.create({
 });
 const login = async ({ email, password }, redirectTo) => {
   const { data, status } = await requester.post("/login", { email, password });
-
   if (status === 200) {
     const { user, token } = data;
     const reduxAction = authSlice.login({ user, token, redirectTo });

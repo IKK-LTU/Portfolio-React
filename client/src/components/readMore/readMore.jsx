@@ -9,7 +9,6 @@ const ReadMoreFeature = (props) => {
   const Show = () => {
     setReadMore(!readMore);
   };
-  // console.log(invisibleText === "");
 
   const ScrollBox = styled(Box)(({ theme }) => ({
     maxHeight: "80%",
@@ -58,12 +57,12 @@ const ReadMoreFeature = (props) => {
 
   return (
     <ScrollBox>
-      <Typography>
+      <Typography component={"span"}>
         {visibleText}
         {invisibleText === "" ? null : "... "}
         {invisibleText === "" ? null : readMore ? (
           <>
-            <Typography>
+            <Typography component={"span"}>
               {invisibleText}{" "}
               <TypographyButton onClick={Show}>Less</TypographyButton>
             </Typography>

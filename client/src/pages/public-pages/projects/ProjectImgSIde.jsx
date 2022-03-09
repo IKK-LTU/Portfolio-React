@@ -28,7 +28,7 @@ const ImageBox = (props) => {
           // boxShadow: "2px 2px 2px 5px rgba(0, 0, 0, .1)",
         }}
         alt='project img'
-        src={require("../../../assets/projectsImages/darzelis/BD.gif")}
+        src={props.src}
       />
     </StyledImageBox>
   );

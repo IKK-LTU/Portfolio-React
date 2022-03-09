@@ -1,9 +1,7 @@
 import React from "react";
-import { Box, Typography} from "@mui/material";
-import ImageBox from './ProjectImgSIde';
-import { styled } from "@mui/material/styles";
+import { Box, Typography } from "@mui/material";
 
-import ProjectDescriptionBox from './ProjectDescriptionSide';
+import { styled } from "@mui/material/styles";
 
 
 const StyledProjectContainer = styled(Box)(({ theme }) => ({
@@ -19,41 +17,23 @@ const StyledProjectContainer = styled(Box)(({ theme }) => ({
     width: "80%",
     padding: "1.5rem 10%",
   },
-  [theme.breakpoints.down("lg")]: {
-  },
+  [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("sm")]: {
     width: "90%",
     padding: "1rem 5%",
   },
 }));
-const StyledProjectBox = styled(Box)(({ theme }) => ({
-  display: "flex",
-  justifyContent: "space-between",
-  height: "80%",
-  [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {},
-  [theme.breakpoints.down("md")]: {
-    flexDirection: "column",
-  },
-  [theme.breakpoints.down("sm")]: {
-    widht: "100%",
-  },
-}));
-const DateText = styled(Typography)(({ theme }) => ({
-  textAlign: "right",
-  color: "#9A9A9A",
-  width: "100%",
-}));
 
-const projectContainer = (props) => {
+
+
+const projectContainer = ({children}) => {
   return (
-    <StyledProjectContainer sx={{ background: `${props.color}`,color:'red' }}>
-      {props.bgColor}
-      <DateText varian='p'>{props.projectDate }</DateText>
-      <StyledProjectBox>
-        <ImageBox />
-        <ProjectDescriptionBox />
-      </StyledProjectBox>
+    <StyledProjectContainer
+      sx={{
+        background: `#000 linear-gradient(315deg, #2d3436 0%, #000000 74%)`,
+        color: "red",
+      }}>
+      {children}
     </StyledProjectContainer>
   );
 };

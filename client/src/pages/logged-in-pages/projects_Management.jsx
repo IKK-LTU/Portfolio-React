@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Container, Button, Box, Modal, Typography } from "@mui/material";
+
 const fakeProjects = [
   {
     id: "1",
@@ -31,6 +32,8 @@ const ProjectsManagement = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+ 
   return (
     <Container sx={{ height: "100%", width: "100%", paddingTop: "100px" }}>
       <Button
@@ -55,7 +58,6 @@ const ProjectsManagement = () => {
           </Typography>
           <Box>
             <Typography>Upload Images or gifs</Typography>
-            
           </Box>
         </Box>
       </Modal>

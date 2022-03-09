@@ -26,74 +26,74 @@
       "last-editor": null,
       "technologies": [""],
       "images": [
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4"
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif"
       ]
     },
     {
       "id": "2",
-      "date": "2021-12-10",
+      "date": "2021-12-11",
       "title": "React Form",
       "description": "nnanananna",
       "last-editor": null,
       "technologies": [""],
       "images": [
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4"
+        "./src/assets/projectsImages/darzeliss.gif",
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif"
       ]
     },
     {
       "id": "3",
-      "date": "2021-12-10",
+      "date": "2021-12-12",
       "title": "React Form",
       "description": "nnanananna",
       "last-editor": null,
       "technologies": [""],
       "images": [
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4"
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif"
       ]
     },
     {
       "id": "4",
-      "date": "2021-12-10",
+      "date": "2021-12-13",
       "title": "React Form",
       "description": "nnanananna",
       "last-editor": null,
       "technologies": [""],
       "images": [
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4"
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif"
       ]
     },
     {
       "id": "5",
-      "date": "2021-12-10",
+      "date": "2021-12-14",
       "title": "React Form",
       "description": "nnanananna",
       "last-editor": null,
       "technologies": [""],
       "images": [
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4"
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif"
       ]
     },
     {
       "id": "6",
-      "date": "2021-12-10",
+      "date": "2021-12-15",
       "title": "React Form",
       "description": "nnanananna",
       "last-editor": null,
       "technologies": [""],
       "images": [
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4",
-        "../pictures/Darzelis-1mp4"
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif",
+        "./src/assets/projectsImages/BD.gif"
       ]
     }
   ]

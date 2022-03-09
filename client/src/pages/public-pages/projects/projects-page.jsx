@@ -1,7 +1,14 @@
-import React from "react";
-import { Box } from "@mui/material";
+import React, { useState, useEffect, useContext } from "react";
+import { Box, Typography } from "@mui/material";
 import ProjectContainer from "./project-container";
 import { styled } from "@mui/material/styles";
+import { ProjectsContext } from "../context/data-context";
+import ImageBox from "./ProjectImgSIde";
+import ProjectDescriptionBox from "./ProjectDescriptionSide";
+import ReadMore from "../../../components/readMore/readMore";
+import LinkToProject from "./LinkToProject";
+
+// import ProjectsService from "../../../services/projects-service";
 
 const StyledProjectPageContainer = styled(Box)(({ theme }) => ({
   position: "absolute",
@@ -10,28 +17,68 @@ const StyledProjectPageContainer = styled(Box)(({ theme }) => ({
   left: "0",
   right: "0",
   [theme.breakpoints.down("xl")]: {},
-  [theme.breakpoints.down("lg")]: {
-  },
+  [theme.breakpoints.down("lg")]: {},
   [theme.breakpoints.down("md")]: {
     height: "auto",
   },
+  [theme.breakpoints.down("sm")]: {},
+}));
+const DateText = styled(Typography)(({ theme }) => ({
+  textAlign: "right",
+  color: "#9A9A9A",
+  width: "100%",
+}));
+const StyledProjectBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  justifyContent: "space-between",
+  height: "80%",
+  [theme.breakpoints.down("xl")]: {},
+  [theme.breakpoints.down("lg")]: {},
+  [theme.breakpoints.down("md")]: {
+    flexDirection: "column",
+  },
   [theme.breakpoints.down("sm")]: {
+    widht: "100%",
   },
 }));
 const ProjectsPage = () => {
+  const { projects, loading } = useContext(ProjectsContext);
+
   return (
     <StyledProjectPageContainer sx={{}}>
-      <ProjectContainer
-        color='#000 linear-gradient(315deg, #2d3436 0%, #000000 74%)'
-        projectDate='2021-01-30'
-      />
-      <ProjectContainer color='#f7f7f7' projectDate='2021-01-30' />
-      <ProjectContainer
-        color='#000 linear-gradient(315deg, #2d3436 0%, #000000 74%)'
-        projectDate='2021-01-30'
-      />
+      {loading === false ? (
+        projects.map((project) => {
+          return (
+            <ProjectContainer key={project.id} projectDate={project.date}>
+              <DateText varian='p' />
+              <StyledProjectBox>
+                <ImageBox src={project.images[0]} />
+                <ProjectDescriptionBox>
+                  <Typography
+                    varian='h2'
+                    component='h2'
+                    sx={{
+                      color: "#FF7D7D",
+                      fontSize: "1.2rem",
+                      textAlign: "center",
+                      py: 2,
+                    }}>
+                    {project.title}
+                  </Typography>
+                  <ReadMore
+                    text={project.description}
+                  />
+                  <LinkToProject linkTo='./' />
+                </ProjectDescriptionBox>
+              </StyledProjectBox>
+            </ProjectContainer>
+          );
+        })
+      ) : (
+        <h1>Krauna</h1>
+      )}
     </StyledProjectPageContainer>
   );
-}
+};
 
 export default ProjectsPage;

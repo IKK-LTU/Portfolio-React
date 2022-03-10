@@ -7,15 +7,29 @@ import BlogModal from "./blogModal";
 
 const StyledBlogCard = styled(Box)(({ theme }) => ({
   width: "100%",
-  maxHeight: "30%",
+  height: "50%",
   overflow: "hidden",
   border: "1px solid #C5C5C5",
   borderRadius: "2px",
   padding: "2rem",
   fontSize: "15px",
-  [theme.breakpoints.up("sm")]: { width: "50%", margin: "auto" },
-  [theme.breakpoints.up("md")]: { width: "45%", margin: "auto 0" },
-  [theme.breakpoints.up("lg")]: { width: "30%", margin: "auto 0" },
+  
+  transition:'.5s',
+  boxShadow: [theme.shadows[14]],
+  "&:hover": {
+    boxShadow: [theme.shadows[5]],
+  },
+  [theme.breakpoints.up("sm")]: { width: "50%", height: "50%", margin: "auto" },
+  [theme.breakpoints.up("md")]: {
+    width: "45%",
+    height: "100%",
+    margin: "auto 0",
+  },
+  [theme.breakpoints.up("lg")]: {
+    width: "25%",
+    height: "100%",
+    margin: "auto 0",
+  },
   [theme.breakpoints.up("xl")]: {},
 }));
 
@@ -25,11 +39,15 @@ const BlogCard = (props) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <StyledBlogCard
-      variant='article'
-      >
+    <StyledBlogCard variant='article'>
       <Typography
-        sx={{ fontSize: "1.5em", fontWeight: "bold", textAlign: "center" }}
+        onClick={handleOpen}
+        sx={{
+          fontSize: "1.5em",
+          fontWeight: "bold",
+          textAlign: "center",
+          cursor: "pointer",
+        }}
         varian='h2'>
         {props.blogTitle}
       </Typography>
@@ -37,18 +55,21 @@ const BlogCard = (props) => {
         {props.blogDate} | {props.blogAuthor}
       </Typography>
       <Typography
+        onClick={handleOpen}
         sx={{
           display: "-webkit-box",
-         '-webkitBoxOrient': "vertical",
-          '-webkitLineClamp': "10",
+          "-webkitBoxOrient": "vertical",
+          "-webkitLineClamp": "10",
           overflow: "hidden",
           my: 2,
           fontSize: "0.9em",
+          cursor: "pointer",
         }}
         varian='p'>
         {props.blogText}
       </Typography>
       <Typography
+        onClick={handleOpen}
         sx={{
           color: "#79815E",
           cursor: "pointer",
@@ -58,7 +79,6 @@ const BlogCard = (props) => {
             color: "#414828",
           },
         }}
-        onClick={handleOpen}
         varian='p'>
         Read more &gt;
       </Typography>

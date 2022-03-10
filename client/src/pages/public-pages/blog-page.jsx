@@ -1,146 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 // import { styled } from "@mui/material/styles";
 import BlogCard from "../../components/blogCard/blogCard";
-
+import { DataContext } from "./context/data-context";
 import { Container } from "@mui/material";
-const BlogPage = () => {
-const textt = `KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...] KEEPING CHILDREN SAFE ON THE INTERNET It should come as a surprise
-            to no one that the Internet can be a dangerous place. Sure, the
-            Internet allows you to access information at your leisure and
-            connect with people in faraway places easily; however, you never
-            know who may try to [...dd]`;
 
+const BlogPage = () => {
+  const { blogs, loading } = useContext(DataContext);
   return (
     <Container
       sx={{ py: 5, display: "flex", flexFlow: "row wrap", gap: "2rem" }}>
-      <BlogCard
-        blogTitle='CSS Animations'
-        blogDate='2022 February 10'
-        blogAuthor='IK'
-        blogText={textt}
-      />
-      <BlogCard
-        blogTitle='CSS Animations'
-        blogDate='2022 February 10'
-        blogAuthor='IK'
-        blogText={textt}
-      />
-      <BlogCard
-        blogTitle='CSS Animations'
-        blogDate='2022 February 10'
-        blogAuthor='IK'
-        blogText={textt}
-      />
-      <BlogCard
-        blogTitle='CSS Animations'
-        blogDate='2022 February 10'
-        blogAuthor='IK'
-        blogText={textt}
-      />
-      <BlogCard
-        blogTitle='CSS Animations'
-        blogDate='2022 February 10'
-        blogAuthor='IK'
-        blogText={textt}
-      />
-      <BlogCard
-        blogTitle='CSS Animations'
-        blogDate='2022 February 10'
-        blogAuthor='IK'
-        blogText={textt}
-      />
-      <BlogCard
-        blogTitle='CSS Animations'
-        blogDate='2022 February 10'
-        blogAuthor='IK'
-        blogText={textt}
-      />
-      <BlogCard
-        blogTitle='CSS Animations'
-        blogDate='2022 February 10'
-        blogAuthor='IK'
-        blogText={textt}
-      />
+      {loading ? (
+        <h1>Krauna</h1>
+      ) : (
+        blogs.map((blog) => {
+          return (
+            <BlogCard
+              blogTitle={blog.title}
+              blogDate={blog.date}
+              blogAuthor={blog.author}
+              blogText={blog.text}
+            />
+          );
+        })
+      )}
     </Container>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Box, Typography } from "@mui/material";
 import ProjectContainer from "./project-container";
 import { styled } from "@mui/material/styles";
-import { ProjectsContext } from "../context/data-context";
+import { DataContext } from "../context/data-context";
 import ImageBox from "./ProjectImgSIde";
 import ProjectDescriptionBox from "./ProjectDescriptionSide";
 import ReadMore from "../../../components/readMore/readMore";
@@ -42,7 +42,7 @@ const StyledProjectBox = styled(Box)(({ theme }) => ({
   },
 }));
 const ProjectsPage = () => {
-  const { projects, loading } = useContext(ProjectsContext);
+  const { projects, loading } = useContext(DataContext);
 
   return (
     <StyledProjectPageContainer sx={{}}>

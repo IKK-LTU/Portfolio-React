@@ -4,6 +4,7 @@ import { config } from 'dotenv';
 import authRouter from './routes/auth-router.js';
 import usersRouter from './routes/users-router.js';
 import projectsRouter from './routes/projects-router.js';
+import blogsRouter from './routes/blogs-router.js';
 import cors from 'cors';
 import './database/index.js';
 
@@ -28,6 +29,7 @@ server.use(express.static(PUBLIC_PATH));
 server.use('/api/auth', authRouter);
 server.use('/api/users', usersRouter);
 server.use("/api/projects", projectsRouter);
+server.use("/api/blogs", blogsRouter);
 
 
 // Serveriui perduodamos užklausos, kurios bus gautos į šio kompiuterio 5000'inį port'ą

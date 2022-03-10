@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { useFormik } from "formik";
+import * as yup from "yup";
 import { styled } from "@mui/material/styles";
-import { Box, TextField, Button } from "@mui/material";
+import { Box, TextField, Button, CircularProgress } from "@mui/material";
+import { selectAuth } from "../../../store/auth";
+import UserService from "../../../services/user-service";
 
 const BoxStyled = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -8,7 +13,7 @@ const BoxStyled = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   width: "100vw",
-  height:'100%',
+  height: "100%",
   [theme.breakpoints.up("sm")]: {
     width: "50%",
     margin: "auto",
@@ -20,7 +25,53 @@ const BoxStyled = styled(Box)(({ theme }) => ({
   },
 }));
 
+const validationSchema = yup.object({
+  name: yup
+    .string()
+    .min(2, "At least 2 symbols")
+    .max(32, "Maximum 32 symbols")
+    .required("Is required"),
+  surname: yup
+    .string()
+    .min(2, "At least 2 symbols")
+    .max(32, "Maximum 32 symbols")
+    .required("Is required"),
+  email: yup.string().email("Is not valid email").required("Is required"),
+});
+
+
+
 const PageProfile = () => {
+  const { user } = useSelector(selectAuth);
+  // const [emailBeingChecked, setEmailBeingChecked] = useState(false);
+  // const [emailAvailable, setEmailAvailable] = useState(true);
+  // const [open, setOpen] = useState(false);
+
+  const onSubmit = async () => {
+    const response = await UserService.updateProfile(values);
+    console.log(response);
+  };
+
+
+  const {
+    values,
+    errors,
+    dirty,
+    isValid,
+    handleChange,
+    handleSubmit,
+    isSubmitting,
+  } = useFormik({
+    initialValues: {
+      name:user.name,
+      surname:user.surname,
+      email:user.email,
+    },
+    validationSchema,
+    onSubmit,
+    enableReinitialize: true,
+  });
+
   return (
     <BoxStyled>
       <Box
@@ -49,6 +100,7 @@ const PageProfile = () => {
           />
         </Box>
         <form
+          onSubmit={handleSubmit}
           sx={{
             display: "flex",
             flexWrap: "wrap",
@@ -58,47 +110,45 @@ const PageProfile = () => {
           <TextField
             id='name'
             label='Name'
-            value='Adminas'
+            value={values.name}
+            onChange={handleChange}
+            error={Boolean(errors.name)}
+            helperText={errors.name}
+            disabled={isSubmitting}
             size='small'
             variant='standard'
-            disabled
             sx={{ mb: 1, width: "100%" }}
           />
           <TextField
             id='surname'
             label='Surname'
-            value='Gediminas'
+            value={values.surname}
+            onChange={handleChange}
+            error={Boolean(errors.surname)}
+            helperText={errors.surname}
+            disabled={isSubmitting}
             size='small'
             variant='standard'
             fullWidth
-            disabled
             sx={{ mb: 1 }}
           />
           <TextField
             id='email'
             label='Email'
-            value='adminas@gmail.com'
+            value={values.email}
+            onChange={handleChange}
+            error={Boolean(errors.email)}
+            helperText={errors.email}
+            disabled={isSubmitting}
             size='small'
             variant='standard'
             fullWidth
-            disabled
-            sx={{ mb: 1 }}
-          />
-          <TextField
-            id='password'
-            label='Password'
-            value='Vilnius123'
-            type='password'
-            size='small'
-            variant='standard'
-            fullWidth
-            disabled
             sx={{ mb: 1 }}
           />
           <TextField
             id=''
             label='Role'
-            value='Admin'
+            value={user.role}
             size='small'
             variant='standard'
             fullWidth
@@ -106,16 +156,22 @@ const PageProfile = () => {
             sx={{ mb: 1 }}
           />
           <Button
-            color='primary'
             fullWidth
+            disabled={!isValid || !dirty}
+            type='submit'
             sx={{
+              color: "#2d321d",
               my: 2,
-              background: "#e7b37e",
+              background: "#7aff00",
               "&:hover": {
                 background: "#d7ba9d",
               },
             }}>
-            Submit
+            {isSubmitting ? (
+              <CircularProgress color='inherit' size={24} />
+            ) : (
+              "update profile"
+            )}
           </Button>
         </form>
       </Box>

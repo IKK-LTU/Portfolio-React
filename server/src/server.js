@@ -2,6 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import { config } from 'dotenv';
 import authRouter from './routes/auth-router.js';
+import profileRouter from './routes/profile-router';
 import usersRouter from './routes/users-router.js';
 import projectsRouter from './routes/projects-router.js';
 import blogsRouter from './routes/blogs-router.js';
@@ -27,6 +28,7 @@ server.use(express.static(PUBLIC_PATH));
 // Response handlers
 // Visas užklasas kurios prasideda  adresu '/api/auth' serveris nukreips į authRouter
 server.use('/api/auth', authRouter);
+server.use("/api/profile", profileRouter);
 server.use('/api/users', usersRouter);
 server.use("/api/projects", projectsRouter);
 server.use("/api/blogs", blogsRouter);

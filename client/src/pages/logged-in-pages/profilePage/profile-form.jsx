@@ -22,11 +22,13 @@ const BoxStyled = styled(Box)(({ theme }) => ({
   alignItems: "center",
   width: "100%",
   [theme.breakpoints.up("sm")]: {
-    width: "50%",
+    width: "90%",
     margin: "auto",
     justifyContent: "center",
   },
-  [theme.breakpoints.up("md")]: {},
+  [theme.breakpoints.up("md")]: {
+    width: "50%",
+  },
   [theme.breakpoints.up("lg")]: {
     margin: "auto",
   },
@@ -84,7 +86,6 @@ const PageProfile = ({ name, surname, email, imgSrc }) => {
         const fetchedEmailAvailable = await AuthService.checkEmail(
           event.target.value
         );
-        console.log(fetchedEmailAvailable);
         setEmailBeingChecked(false);
         setEmailAvailable(fetchedEmailAvailable);
       })();
@@ -111,7 +112,6 @@ const PageProfile = ({ name, surname, email, imgSrc }) => {
       );
     }
   }
-  console.log(imgSrc)
   return (
     <>
       <ConfirmationModal
@@ -126,7 +126,7 @@ const PageProfile = ({ name, surname, email, imgSrc }) => {
             borderRadius: "2px",
             boxShadow: 2,
           }}>
-            <ProfileImage imgSrc={imgSrc}/>
+          <ProfileImage imgSrc={imgSrc}/>
           <form
             onSubmit={handleSubmit}
             sx={{

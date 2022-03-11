@@ -2,9 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Box, styled, Fab } from "@mui/material";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import UserService from "../../../services/user-service";
-import NoUser from "/no-image-person.jpg";
 const mdFixedPortion = 50;
-console.log(`nuotrauka:${NoUser}`);
 const ImgContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   display: "block",
@@ -79,7 +77,7 @@ const ProfilePageImage = (props) => {
   return (
     <ImgContainer>
       <Img
-        src={props.imgSrc ?? "./no-image-person.jpg"}
+        src={props.imgSrc ?? "/no-image-person.jpg"}
         alt='user image'
         ref={imageRef}
       />

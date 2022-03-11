@@ -1,19 +1,12 @@
 import database from "../database/index.js";
 import UserViewModel from "../view-models/user-view-model.js";
+import { removeFile } from "../helpers/file.helper.js";
 import { createToken } from "../helpers/token-helpers.js";
 
-
 export const updateProfile = (req, res) => {
-
   const { name, surname, email, password } = req.body;
-  
-  conaolw.log('--------------------------------------')
-  console.log(req);
-  conaolw.log('--------------------------------------')
   const foundUser = database.data.users.find((x) => x.email === req.user.email);
-
   const passwordCorrect = password === foundUser.password;
-
   if (!passwordCorrect) {
     res.status(403).json({
       message: "Password is incorrect",
@@ -35,8 +28,22 @@ export const updateProfile = (req, res) => {
     user: new UserViewModel(foundUser),
     passwordCorrect,
   };
-console.log(responseJson);
   if (token) responseJson.token = token;
 
   res.status(200).json(responseJson);
+};
+
+export const updateImage = (req, res) => {
+  const user = database.data.users.find((x) => x.email === req.user.email);
+  const imgSrc = `/${process.env.IMG_PATH}/${req.file.filename}`;
+  if (user.imgSrc) {
+    removeFile(user.imgSrc);
+  }
+  user.imgSrc = imgSrc;
+  database.write();
+
+  res.status(200).json({
+    message: "Image uploaded",
+    user: new UserViewModel(user),
+  });
 };

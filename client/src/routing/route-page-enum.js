@@ -7,10 +7,10 @@ import LoginPage from "../pages/visitor-pages/loginPage";
 import RegistrtationPage from "../pages/visitor-pages/registrationPage";
 import DashboardLayout from "../components/layouts/dashboard-layout/layout";
 import ErrorPage from "../pages/public-pages/error-page";
-import ProfilePage from '../pages/logged-in-pages/profilePage/profile'
+import ProfilePage from '../pages/logged-in-pages/profilePage/'
 import ProjectsManagerPage from '../pages/logged-in-pages/projects_Management';
 import BlogsManagerPage from '../pages/logged-in-pages/blogsManagement';
-import UsersManagerPage from '../pages/logged-in-pages/usersManagement';
+import UsersManagerPage from '../pages/logged-in-pages/usersPage';
 import PageLayoutDark from "../components/layouts/page-layout/page-layout_darkTheme";
 
 // eslint-disable-next-line import/no-anonymous-default-export

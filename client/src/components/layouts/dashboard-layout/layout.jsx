@@ -7,20 +7,21 @@ import NavBar from "../../navBars/loggedInUsersNavBar/navbar";
 const StyledContainer = styled(Container)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
-  boxSizing:'border-box',
-  height:'100vh',
+  boxSizing: "border-box",
+  height: "100vh",
   width: "100%",
-  paddingTop:'50px',
+  paddingTop: "60px",
   [theme.breakpoints.up("sm")]: {
     width: "90%",
+    paddingTop: "70px",
   },
   [theme.breakpoints.up("md")]: {
-    padding: 0,
+    paddingTop: "100px",
   },
   [theme.breakpoints.up("lg")]: {
     width: "100vw",
     maxWidht: "100vw",
-    padding: 0,
+    paddingTop: "100px",
     margin: "auto",
   },
 }));

@@ -41,7 +41,7 @@ const Navbar = () => {
   const id = open ? "simple-popover" : undefined;
   
   return (
-    <Box sx={{ position: "fixed", width:'100%' }}>
+    <Box sx={{ position: "fixed", width: "100%" }}>
       <Toolbar
         sx={{
           display: "flex",
@@ -61,6 +61,7 @@ const Navbar = () => {
           <NavBarLink path={routes.ProfilePage} title='Profile' />
           <NavBarLink path={routes.ProjectsManagerPage} title='Projects' />
           <NavBarLink path={routes.BlogsManagerPage} title='Blogs' />
+          <NavBarLink path={routes.UsersManagerPage} title='Users' />
         </Box>
         <Box sx={{ display: "flex" }}>
           <AccountCircleIcon

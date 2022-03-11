@@ -2,19 +2,21 @@
   "users": [
     {
       "id": "1",
-      "email": "user@gmail.com",
+      "email": "Montis.Degela@gmail.com",
       "password": "Vilnius123",
-      "name": "Serbis",
-      "surname": "Montis",
-      "role": "USER"
+      "name": "Montis",
+      "surname": "Degela",
+      "role": "USER",
+      "imgSrc": "/images/ik.png"
     },
     {
       "id": "2",
       "email": "admin@gmail.com",
       "password": "Vilnius123",
-      "name": "Adminas",
-      "surname": "Gediminas",
-      "role": "ADMIN"
+      "name": "Jurgis",
+      "surname": "Drakonas",
+      "role": "ADMIN",
+      "imgSrc": "/images/img-1647016060539.JPG"
     }
   ],
   "projects": [
@@ -24,7 +26,9 @@
       "title": "Birthdays Animation",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
       "last-editor": null,
-      "technologies": [""],
+      "technologies": [
+        ""
+      ],
       "images": [
         "http://localhost:5000/images/BD.gif",
         "http://localhost:5000/images/BD.gif",
@@ -37,7 +41,9 @@
       "title": "Contact form",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
       "last-editor": null,
-      "technologies": [""],
+      "technologies": [
+        ""
+      ],
       "images": [
         "http://localhost:5000/images/darzeliss.gif",
         "http://localhost:5000/images/BD.gif",
@@ -50,7 +56,9 @@
       "title": "React Form",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
       "last-editor": null,
-      "technologies": [""],
+      "technologies": [
+        ""
+      ],
       "images": [
         "http://localhost:5000/images/BD.gif",
         "http://localhost:5000/images/BD.gif",
@@ -63,7 +71,9 @@
       "title": "React Form",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
       "last-editor": null,
-      "technologies": [""],
+      "technologies": [
+        ""
+      ],
       "images": [
         "http://localhost:5000/images/BD.gif",
         "http://localhost:5000/images/BD.gif",
@@ -76,7 +86,9 @@
       "title": "React Form",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
       "last-editor": null,
-      "technologies": [""],
+      "technologies": [
+        ""
+      ],
       "images": [
         "http://localhost:5000/images/BD.gif",
         "http://localhost:5000/images/BD.gif",
@@ -89,7 +101,9 @@
       "title": "React Form",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
       "last-editor": null,
-      "technologies": [""],
+      "technologies": [
+        ""
+      ],
       "images": [
         "http://localhost:5000/images/BD.gif",
         "http://localhost:5000/images/BD.gif",

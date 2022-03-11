@@ -2,23 +2,22 @@ import React, { useRef, useEffect } from "react";
 import { Box, styled, Fab } from "@mui/material";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
 import UserService from "../../../services/user-service";
-
-const mdFixedPortion = 200;
-
+import NoUser from "/no-image-person.jpg";
+const mdFixedPortion = 50;
+console.log(`nuotrauka:${NoUser}`);
 const ImgContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   display: "block",
-  height: "65vw",
-  width: "65vw",
+  height: "35vw",
+  width: "35vw",
   marginLeft: "auto",
   marginRight: "auto",
-  [theme.breakpoints.up("sm")]: {
-    height: 220,
-    width: 220,
-    marginLeft: theme.spacing(2),
-    marginRight: "initial",
-    marginTop: theme.spacing(3),
-  },
+
+  // [theme.breakpoints.up("sm")]: {
+  //   // marginLeft: theme.spacing(2),
+  //   marginRight: "initial",
+  //   // marginTop: theme.spacing(3),
+  // },
   [theme.breakpoints.up("md")]: {
     height: `calc(${mdFixedPortion}px + 10vw)`,
     width: `calc(${mdFixedPortion}px + 10vw)`,
@@ -32,6 +31,7 @@ const ImgContainer = styled(Box)(({ theme }) => ({
 const Img = styled("img")({
   width: "100%",
   height: "100%",
+  outline: "2px solid #79815E",
   objectFit: "cover",
   objectPosition: "cover",
   borderRadius: "50%",
@@ -44,7 +44,7 @@ const calcOffset = (image, imgIcon) => {
   return radius * (1 - 1 / 2 ** (1 / 2)) - imageDimension / 2.3;
 };
 
-const ProfilePageImage = ({ imgSrc }) => {
+const ProfilePageImage = (props) => {
   const imageRef = useRef(null);
   const imgIconRef = useRef(null);
   const imgUploadRef = useRef(null);
@@ -76,11 +76,10 @@ const ProfilePageImage = ({ imgSrc }) => {
       window.removeEventListener("resize", adjustImgIconOffset);
     };
   }, []);
-
   return (
     <ImgContainer>
       <Img
-        src={imgSrc ?? "/no-image-person.jpg"}
+        src={props.imgSrc ?? "./no-image-person.jpg"}
         alt='user image'
         ref={imageRef}
       />

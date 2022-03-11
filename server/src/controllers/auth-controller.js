@@ -1,10 +1,10 @@
 import database from "../database/index.js";
 import UserViewModel from "../view-models/user-view-model.js";
+import { createToken } from "../helpers/token-helpers.js";
 
 export const login = (req, res) => {
   const { email, password } = req.body;
   const { users } = JSON.parse(JSON.stringify(database.data));
-
   const foundUser = users.find((x) => x.email === email);
 
   if (!foundUser) {
@@ -18,7 +18,7 @@ export const login = (req, res) => {
   if (foundUser.password === password) {
     res.status(200).json({
       user: new UserViewModel(foundUser),
-      token: "Kazkada busiu tikras tokenas",
+      token: createToken({ email, role: foundUser.role }),
     });
     return;
   }
@@ -35,8 +35,8 @@ export const register = (req, res) => {
 
 export const checkEmail = (req, res) => {
   const { email } = req.query;
-  const database = JSON.parse(JSON.stringify(database.data));
-  const emailIsTaken = Boolean(database.users.find((x) => x.email === email));
+  const databases = JSON.parse(JSON.stringify(database.data));
+  const emailIsTaken = Boolean(databases.users.find((x) => x.email === email));
   if (emailIsTaken) {
     res.status(200).json({
       available: false,

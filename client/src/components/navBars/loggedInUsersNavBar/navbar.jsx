@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../../store/auth";
-import { Button, Box, Toolbar, Popover } from "@mui/material";
+import { Button, Box, Toolbar, Popover, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PermIdentityTwoToneIcon from "@mui/icons-material/PermIdentityTwoTone";
@@ -64,6 +64,7 @@ const Navbar = () => {
           <NavBarLink path={routes.UsersManagerPage} title='Users' />
         </Box>
         <Box sx={{ display: "flex" }}>
+          <Typography>nanan</Typography>
           <AccountCircleIcon
             id='basic-button'
             onClick={handleClick}

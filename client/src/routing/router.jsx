@@ -7,7 +7,6 @@ import {
   PROJECTS_MANAGER,
   BLOG_MANAGER,
 } from "./auth-types"; 
-import DataProvider from "../pages/public-pages/context/data-context";
 import RequireVisitor from "./require-Visitor";
 import RequireAdmin from "./require-Admin";
 import RequireLoggedIn from "./require-LoggedIn";
@@ -19,9 +18,7 @@ import routePageEnum from "./route-page-enum";
 const addRouteProtection = {
   [VISITOR]: (Page) => (
     <RequireVisitor>
-      <DataProvider>
       <Page />
-      </DataProvider>
     </RequireVisitor>
   ),
   [ADMIN]: (Page) => (

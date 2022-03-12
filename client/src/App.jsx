@@ -5,13 +5,15 @@ import { ThemeProvider } from "@mui/material/styles";
 import theme from "./styles/lightTheme";
 import Router from "./routing/router";
 import store from "./store/index";
-
+import DataProvider from "./pages/public-pages/context/data-context";
 const App = () => {
   return (
     <CssBaseline>
       <ThemeProvider theme={theme}>
         <ReduxProvider store={store}>
-          <Router />
+          <DataProvider>
+            <Router />
+          </DataProvider>
         </ReduxProvider>
       </ThemeProvider>
     </CssBaseline>
@@ -19,4 +21,3 @@ const App = () => {
 };
 
 export default App;
-

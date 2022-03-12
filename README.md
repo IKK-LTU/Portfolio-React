@@ -1,6 +1,6 @@
 # How to run the project
 
-## Install dependencies in server and client folders
+## Install the dependencies on the server and client folders
 
 cd server & cd client
 npm i

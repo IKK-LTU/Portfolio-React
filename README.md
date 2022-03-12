@@ -2,24 +2,23 @@
 
 ## Install the dependencies on the server and client folders
 
-cd server & cd client
-npm i
+-cd server & cd client
+-npm i
 
 ## Run development
 
 ### Client
-npm start
+-npm start
 
 ### Server
 
-change .env-example file name to .env
-
-npm start
+-change .env-example file name to .env
+-npm start
 
 ## Run production
 
-npm run build
+-npm run build
 
-npm install -g serve
+-npm install -g serve
 
-serve -s build
+-serve -s build

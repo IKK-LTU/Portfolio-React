@@ -13,6 +13,7 @@ npm start
 ### Server
 
 change .env-example file name to .env
+
 npm start
 
 ## Run production

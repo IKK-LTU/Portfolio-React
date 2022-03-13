@@ -56,10 +56,12 @@ const BlogCard = (props) => {
       </Typography>
       <Typography
         onClick={handleOpen}
-        sx={{
+        style={{
           display: "-webkit-box",
-          "-webkitBoxOrient": "vertical",
-          "-webkitLineClamp": "10",
+          "WebkitBoxOrient": "vertical",
+          "WebkitLineClamp": "10",
+        }}
+        sx={{
           overflow: "hidden",
           my: 2,
           fontSize: "0.9em",

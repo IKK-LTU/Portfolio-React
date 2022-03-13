@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Box, Modal, Typography, TextField } from "@mui/material";
-
+// import ProjectsService from '../../../services/projects-service';
 const style = {
   position: "absolute",
   width: "90%",
@@ -17,6 +17,14 @@ const NewProjectModal = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  // const updateItem = () => {
+  //   ProjectsService.updateProject({
+  //     itemId: "13",
+  //     title: "New title",
+  //   });
+  // };
+
   return (
     <>
       <Button

@@ -48,7 +48,7 @@ const validationSchema = yup.object({
   email: yup.string().email("Is not valid email").required("Is required"),
 });
 
-const PageProfile = ({ name, surname, email, imgSrc }) => {
+const PageProfile = ({ name, surname, email, role, imgSrc }) => {
   const [emailBeingChecked, setEmailBeingChecked] = useState(false);
   const [emailAvailable, setEmailAvailable] = useState(true);
   const [open, setOpen] = useState(false);
@@ -70,6 +70,7 @@ const PageProfile = ({ name, surname, email, imgSrc }) => {
       name,
       surname,
       email,
+      role,
       imgSrc
     },
     validationSchema,
@@ -180,7 +181,7 @@ const PageProfile = ({ name, surname, email, imgSrc }) => {
             <TextField
               id=''
               label='Role'
-              value='rol'
+              value={values.role}
               size='small'
               variant='standard'
               fullWidth

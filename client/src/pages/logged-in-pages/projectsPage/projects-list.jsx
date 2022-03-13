@@ -1,20 +1,23 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../public-pages/context/data-context";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Tooltip,
+} from "@mui/material";
 import EditRoundedIcon from "@mui/icons-material/EditRounded";
 import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
 
-
-
 const ProjectsList = () => {
   const { projects, loading } = useContext(DataContext);
-  console.log(projects, loading);
+
+  
+
   return (
     <TableContainer component={Paper} sx={{ backgroundColor: "white" }}>
       {loading ? (
@@ -43,13 +46,21 @@ const ProjectsList = () => {
                 </TableCell>
                 <TableCell align='right'>{row.title}</TableCell>
                 <TableCell align='right'>{row.date}</TableCell>
-                <TableCell align='right'>{row["last-editor"]}</TableCell>
+                <TableCell align='right'>{row.editor}</TableCell>
                 <TableCell align='right'>
                   <img alt='img' src={row.images} />
                 </TableCell>
                 <TableCell sx={{ width: "70px", px: 0 }} align='center'>
-                  <EditRoundedIcon sx={{ color: "#00fd13",cursor:'pointer' }} />
-                  <HighlightOffRoundedIcon sx={{ color: "red",ml:1,cursor:'pointer' }} />
+                  <Tooltip title='Edit'>
+                    <EditRoundedIcon
+                      sx={{ color: "#00fd13", cursor: "pointer" }}
+                    />
+                  </Tooltip>
+                  <Tooltip title='Remove'>
+                    <HighlightOffRoundedIcon
+                      sx={{ color: "red", ml: 1, cursor: "pointer" }}
+                    />
+                  </Tooltip>
                 </TableCell>
               </TableRow>
             ))}

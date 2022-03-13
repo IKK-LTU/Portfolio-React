@@ -1,13 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { logout } from "../../../store/auth";
-import { Button, Box, Toolbar, Popover, Typography } from "@mui/material";
+import {
+  Button,
+  Box,
+  Toolbar,
+  Popover,
+  Typography,
+  Divider,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PermIdentityTwoToneIcon from "@mui/icons-material/PermIdentityTwoTone";
 import MeetingRoomTwoToneIcon from "@mui/icons-material/MeetingRoomTwoTone";
 import NavBarLink from "./navbar-link";
 import routes from "../../../routing/routes";
+import { selectAuth } from "../../../store/auth";
 
 
 const StyledPopperBox = styled(Popover)(({ theme }) => ({
@@ -30,6 +38,7 @@ const StyledPopperBox = styled(Popover)(({ theme }) => ({
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const {user}=useSelector(selectAuth);
   const dispatch = useDispatch();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -41,7 +50,7 @@ const Navbar = () => {
   const id = open ? "simple-popover" : undefined;
   
   return (
-    <Box sx={{ position: "fixed", width: "100%" }}>
+    <Box sx={{ position: "fixed", width: "100%",zIndex:'2' }}>
       <Toolbar
         sx={{
           display: "flex",
@@ -63,8 +72,19 @@ const Navbar = () => {
           <NavBarLink path={routes.BlogsManagerPage} title='Blogs' />
           <NavBarLink path={routes.UsersManagerPage} title='Users' />
         </Box>
-        <Box sx={{ display: "flex" }}>
-          <Typography>nanan</Typography>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Typography>{`${user.name} ${user.surname}`}</Typography>
+          <Divider
+            orientation='vertical'
+            light
+            flexItem
+            sx={{
+              borderColor: "common.white",
+              my: 2,
+              ml: 2,
+            }}
+            variant='middle'
+          />
           <AccountCircleIcon
             id='basic-button'
             onClick={handleClick}

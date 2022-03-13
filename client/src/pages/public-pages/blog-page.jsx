@@ -15,6 +15,7 @@ const BlogPage = () => {
         blogs.map((blog) => {
           return (
             <BlogCard
+              key={blog.id}
               blogTitle={blog.title}
               blogDate={blog.date}
               blogAuthor={blog.author}

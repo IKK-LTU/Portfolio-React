@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 
 import { styled } from "@mui/material/styles";
-
 
 const StyledProjectContainer = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -24,9 +23,7 @@ const StyledProjectContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-
-
-const projectContainer = ({children}) => {
+const projectContainer = ({ children }) => {
   return (
     <StyledProjectContainer
       sx={{

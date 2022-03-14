@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../store/auth";
 import {
   Button,
@@ -26,6 +26,7 @@ const StyledPopperBox = styled(Popover)(({ theme }) => ({
     background: "white",
     padding: "0.5rem",
   },
+
   "& .MuiButton-root": {
     display: "flex",
     borderRadius: 0,
@@ -38,19 +39,20 @@ const StyledPopperBox = styled(Popover)(({ theme }) => ({
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const {user}=useSelector(selectAuth);
+  const { user } = useSelector(selectAuth);
   const dispatch = useDispatch();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
-  
+
   return (
-    <Box sx={{ position: "fixed", width: "100%",zIndex:'2' }}>
+    <Box sx={{ position: "fixed", width: "100%", zIndex: "2" }}>
       <Toolbar
         sx={{
           display: "flex",

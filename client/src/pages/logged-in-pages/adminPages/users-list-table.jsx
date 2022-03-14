@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import AdminService from "../../../services/admin-service";
-import { selectUsers, addUser, updateUser } from "../../../store/users";
+import { selectUsers } from "../../../store/users";
 import {
   Table,
   TableBody,
@@ -14,7 +14,6 @@ import {
 
 const UsersListTable = () => {
   const users = useSelector(selectUsers);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     AdminService.getUsers();
@@ -27,7 +26,7 @@ const UsersListTable = () => {
         <TableHead>
           <TableRow>
             {Object.keys(users[0]).map((cell) => {
-              return <TableCell>{cell}</TableCell>;
+              return <TableCell key={cell}>{cell}</TableCell>;
             })}
           </TableRow>
         </TableHead>
@@ -38,7 +37,7 @@ const UsersListTable = () => {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
               {row.map((value) => {
                 return (
-                  <TableCell component='th' scope='row'>
+                  <TableCell key={row.id} component='th' scope='row'>
                     {value}
                   </TableCell>
                 );

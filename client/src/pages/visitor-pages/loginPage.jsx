@@ -19,25 +19,22 @@ const validationSchema = yup.object({
   email: yup.string().email("Is not valid email").required("Is required"),
   password: yup.string().required("Is required"),
 });
-
 const initialValues = {
   email: "",
   password: "",
 };
-
 const LoginPage = () => {
   const [searchParams] = useSearchParams();
   const [errorMsg, setErrorMsg] = useState(null);
 
   const handleLogin = async ({ email, password }) => {
-    console.log("veikia")
+    console.log("veikia");
     try {
-      const redirectTo =
-        searchParams.get("redirectTo");
+      const redirectTo = searchParams.get("redirectTo");
       console.log(redirectTo);
       await AuthService.login({ email, password }, redirectTo);
     } catch (error) {
-      console.log("neveikia")
+      console.log("neveikia");
       setErrorMsg(error.message);
     }
   };
@@ -45,9 +42,9 @@ const LoginPage = () => {
     values,
     errors,
     touched,
-    isValid,
-    dirty,
-    isSubmitting,
+    // isValid,
+    // dirty,
+    // isSubmitting,
     handleChange,
     handleBlur,
     handleSubmit,

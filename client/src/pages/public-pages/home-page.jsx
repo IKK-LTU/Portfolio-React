@@ -31,7 +31,7 @@ const HomePage = () => {
     <StyledContainer>
       <Typography variant='h1' sx={{ fontSize: 42 }}>
         Hi,
-        <br /> I'm Ignas
+        <br /> Im Ignas
       </Typography>
       <Typography
         variant='p'

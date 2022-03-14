@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Box, Typography } from "@mui/material";
 import ProjectContainer from "./project-container";
 import { styled } from "@mui/material/styles";
@@ -65,9 +65,7 @@ const ProjectsPage = () => {
                     }}>
                     {project.title}
                   </Typography>
-                  <ReadMore
-                    text={project.description}
-                  />
+                  <ReadMore text={project.description} />
                   <LinkToProject linkTo='./' />
                 </ProjectDescriptionBox>
               </StyledProjectBox>

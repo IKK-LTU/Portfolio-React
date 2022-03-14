@@ -1,10 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
 import {
   VISITOR,
-  ADMIN,
+  // ADMIN,
   LOGGED_IN,
-  PROJECTS_MANAGER,
-  BLOG_MANAGER,
+  // PROJECTS_MANAGER,
+  // BLOG_MANAGER,
 } from "./auth-types";
 
 export default [

@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import {
   Table,
   TableBody,
@@ -12,10 +12,6 @@ import {
   Button,
 } from "@mui/material";
 import {
-  ProjectsSelector,
-  FetchSelector,
-  fetchProjects,
-  fetchProject,
   deleteProjectItem,
   updateProjectItem,
   createProjectItem,
@@ -25,7 +21,7 @@ import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
 
 const ProjectsList = ({ projects }) => {
   // const { projects, loading } = useContext(DataContext);
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const createItem = () => {
     const projectInfo = {
       date: "1999-09-19",

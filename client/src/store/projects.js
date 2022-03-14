@@ -18,34 +18,50 @@ export const fetchProjects = createAsyncThunk(
       // console.log(fetchedProjects);
       return { projects: fetchedProjects };
     }
+    console.log(projects);
     return { projects };
+  }
+);
+export const fetchProject = createAsyncThunk(
+  "Projects/fetchProject",
+  async ({ itemId}, { getState }) => {
+    const { projects: { projects } } = getState();
+    const existingProject = projects.find((x) => x.id === itemId);
+    if (existingProject) throw new Error('project already exist');
+    const fetchedProject = await ProjectsService.fetchProject({itemId});
+    console.log(fetchedProject);
+    return { projects:fetchedProject };
   }
 );
 
 export const createProjectItem = createAsyncThunk(
   "Projects/createProject",
-  async ({ newInfo }) => {
-    const createdItem = await ProjectsService.createProject({ newInfo });
+  async ({ projectInfo }) => {
+    const createdItem = await ProjectsService.createProject({ projectInfo });
     return { createdItem };
   }
 );
 
 export const updateProjectItem = createAsyncThunk(
   "Projects/updateeProject",
-  async ({ itemId, newInfo }) => {
+  async ({ itemId, projectInfo }) => {
+    console.log("------ gauna dispatchas--------");
+    console.log({itemId, projectInfo });
+    console.log("------ gauna dispatchas--------");
     const updatedItem = await ProjectsService.updateProject({
       itemId,
-      newInfo,
+      projectInfo,
     });
-    return updatedItem ;
+    return {updatedItem} ;
   }
 );
 export const deleteProjectItem = createAsyncThunk(
   "Projects/deleteProject",
   async ({ itemId }) => {
-    const deleteItem = await ProjectsService.deleteProject({ itemId });
-    console.log(deleteItem);
-    return { deleteItem };
+     await ProjectsService.deleteProject({ itemId });
+    console.log({ itemId });
+    console.log('praejo');
+    return { itemId };
   }
 );
 
@@ -62,26 +78,29 @@ const ProjectsSlice = createSlice({
       state.projects = payload.projects;
       state.isFetched = true;
     },
+    [fetchProject.fulfilled]: (state, { payload }) => {
+      state.projects.push(payload.projects);
+    },
     [createProjectItem.fulfilled]: (state, { payload }) => {
       const { createdItem } = payload;
-      state.projects.push({ createdItem });
+      state.projects.push({ ...createdItem });
     },
     [createProjectItem.rejected]: (state, { error }) => {
       state.error = error.message;
     },
     [updateProjectItem.fulfilled]: (state, { payload }) => {
-      const { newInfo, itemId } = payload;
-      console.log({ newInfo, itemId });
-      const project = state.projects.find((x) => x.id === itemId);
-      project.data = project.data.map((x) => (x.id === itemId ? itemId : x));
+      const { updatedItem } = payload;
+      state.projects.find((x) => x.id === updatedItem.id);
+      state.projects=state.projects.map((x) =>
+        x.id === updatedItem.id ? updatedItem : x
+      );
     },
     [updateProjectItem.rejected]: (state, { error }) => {
       state.error = error.message;
     },
     [deleteProjectItem.fulfilled]: (state, { payload }) => {
-      const { deleteItem } = payload;
-      const project = state.projects.find((x) => x.id === deleteItem);
-      project.data = project.data.filter((x) => x.id !== deleteItem);
+      const { itemId } = payload;
+      state.projects = state.projects.filter((x) => x.id !== itemId);
     },
     [deleteProjectItem.rejected]: (state, { error }) => {
       state.error = error.message;
@@ -91,7 +110,9 @@ const ProjectsSlice = createSlice({
 
 export const { deleteError } = ProjectsSlice.actions;
 
-export const collectionErrorSelector = (state) => state.Projects.error;
 export const ProjectsSelector = (state) => state.projects.projects;
+export const FetchSelector = (state) => state.projects.isFetched;
+export const ProjectItemSelector = (id) => (state) =>
+  state.projects.projects.find((x) => x.id === id);
 
 export default ProjectsSlice.reducer;

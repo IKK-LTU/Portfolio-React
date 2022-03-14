@@ -8,12 +8,40 @@ const requester = axios.create({
   },
 });
 const fetchProjects = async () => {
-    try {
-        const { data } = await requester.get('/projects');
-        return data
-    }
-    catch (error) {
-        throw new Error(error.message);
+  try {
+    const { data } = await requester.get('/projects');
+    return data
+  }
+  catch (error) {
+    throw new Error(error.message);
+  }
+};
+const fetchProject = async () => {
+  try {
+    const { data } = await requester.get('/projects');
+    return data
+  }
+  catch (error) {
+    throw new Error(error.message);
+  }
+};
+
+const createProject = async ({ projectInfo }) => {
+  const { token } = store.getState().auth;
+  try {
+    const { data } = await requester.post(
+      `/projects`, // url
+      { projectInfo },
+      {
+        // headeriai - užklausos nustatymai
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    return data;
+  } catch (error) {
+    throw new Error(error.response.data.message);
   }
 };
 
@@ -29,36 +57,17 @@ const deleteProject = async ({ itemId }) => {
         },
       }
     );
-
     return true;
   } catch (error) {
     throw new Error(error.response.data.message);
   }
 };
-const updateProject = async ({ itemId, newInfo }) => {
+const updateProject = async ({ itemId, projectInfo }) => {
   const { token } = store.getState().auth;
   try {
     const { data } = await requester.patch(
       `/projects/${itemId}`, // url
-      { newInfo },
-      {
-        // headeriai - užklausos nustatymai
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
-    return data;
-  } catch (error) {
-    throw new Error(error.response.data.message);
-  }
-};
-const createProject = async ({ newInfo }) => {
-  const { token } = store.getState().auth;
-  try {
-    const { data } = await requester.post(
-      `/projects`, // url
-      { newInfo },
+      { projectInfo },
       {
         // headeriai - užklausos nustatymai
         headers: {
@@ -76,6 +85,6 @@ const ProjectsService = {
   deleteProject,
   updateProject,
   createProject,
+  fetchProject,
 };
-
 export default ProjectsService;

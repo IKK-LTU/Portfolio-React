@@ -14,145 +14,19 @@
       "email": "admin@gmail.com",
       "password": "Vilnius123",
       "name": "Jurgis",
-      "surname": "IrDrakonas",
+      "surname": "Drakonas",
       "role": "ADMIN",
       "imgSrc": "/images/img-1647106013955.jpg"
     }
   ],
   "projects": [
     {
-      "id": "1",
-      "date": "2021-12-10",
-      "category": "1",
-      "title": "Birthdays Animation",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
-      "editor": "Montis Degela",
-      "technologies": [
-        "React",
-        "HTML",
-        "CSS"
-      ],
-      "images": [
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif"
-      ]
-    },
-    {
-      "id": "2",
-      "date": "2021-12-11",
-      "category": "1",
-      "title": "Contact form",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
-      "editor": "Jurgis IrDrakonas",
-      "technologies": [
-        "React",
-        "HTML",
-        "CSS"
-      ],
-      "images": [
-        "http://localhost:5000/images/darzeliss.gif",
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif"
-      ]
-    },
-    {
-      "id": "3",
-      "date": "2021-12-12",
-      "category": "1",
-      "title": "React Form",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
-      "editor": "Montis Degela",
-      "technologies": [
-        "React",
-        "HTML",
-        "CSS"
-      ],
-      "images": [
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif"
-      ]
-    },
-    {
-      "id": "4",
-      "date": "2021-12-13",
-      "category": "1",
-      "title": "React Form",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
-      "editor": "Montis Degela",
-      "technologies": [
-        "React",
-        "HTML",
-        "CSS"
-      ],
-      "images": [
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif"
-      ]
-    },
-    {
-      "id": "5",
-      "date": "2021-12-14",
-      "category": "1",
-      "title": "React Form",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
-      "editor": "Montis Degela",
-      "technologies": [
-        "React",
-        "HTML",
-        "CSS"
-      ],
-      "images": [
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif"
-      ]
-    },
-    {
-      "id": "6",
-      "date": "2021-12-15",
-      "category": "1",
-      "title": "React Form",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
-      "editor": "Luizas Suarezas",
-      "technologies": [
-        "React",
-        "HTML",
-        "CSS"
-      ],
-      "images": [
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif"
-      ]
-    },
-    {
-      "id": "7",
-      "date": "2021-12-12",
-      "category": "1",
-      "title": "React Form",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
-      "editor": "Montis Degela",
-      "technologies": [
-        "React",
-        "HTML",
-        "CSS"
-      ],
-      "images": [
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif"
-      ]
-    },
-    {
-      "id": "8",
-      "date": "1997-12-12",
+      "id": "34dea6e9-33c6-4f66-8352-db98476b2453",
+      "date": "2000-12-30",
       "category": 1,
-      "title": "Naujas projektas",
+      "title": "Updated Figma design",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
-      "editor": "Montis Degela",
+      "editor": "Maiklas",
       "technologies": [
         "React",
         "HTML",
@@ -165,16 +39,88 @@
       ]
     },
     {
-      "id": "4091673b-3330-4a82-896a-dc5fb527977d",
-      "date": "1997-12-12",
+      "id": "2ce89643-5d53-48a6-a9f2-e6ff35512e3c",
+      "date": "2000-12-30",
+      "category": 1,
+      "title": "Updated Figma design",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
+      "editor": "Maiklas",
+      "technologies": [
+        "React",
+        "HTML",
+        "CSS"
+      ],
+      "images": [
+        "http://localhost:5000/images/BD.gif",
+        "http://localhost:5000/images/BD.gif",
+        "http://localhost:5000/images/BD.gif"
+      ]
+    },
+    {
+      "id": "c5f222db-75f0-4c78-90f6-30ab5241d36b",
+      "date": "1999-09-19",
       "category": 1,
       "title": "Figma design",
-      "description": "nananna",
-      "editor": "Markas Markovskis",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
+      "editor": "Maiklas",
       "technologies": [
         "React",
-        "UX/UI",
-        "Figma"
+        "HTML",
+        "CSS"
+      ],
+      "images": [
+        "http://localhost:5000/images/BD.gif",
+        "http://localhost:5000/images/BD.gif",
+        "http://localhost:5000/images/BD.gif"
+      ]
+    },
+    {
+      "id": "02edb1a4-de1a-4f94-8913-5f47fbd56fb7",
+      "date": "1999-09-19",
+      "category": 1,
+      "title": "Figma design",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
+      "editor": "Maiklas",
+      "technologies": [
+        "React",
+        "HTML",
+        "CSS"
+      ],
+      "images": [
+        "http://localhost:5000/images/BD.gif",
+        "http://localhost:5000/images/BD.gif",
+        "http://localhost:5000/images/BD.gif"
+      ]
+    },
+    {
+      "id": "a44cd323-bd84-4061-b5af-047a2490d5ff",
+      "date": "1999-09-19",
+      "category": 1,
+      "title": "Figma design",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
+      "editor": "Maiklas",
+      "technologies": [
+        "React",
+        "HTML",
+        "CSS"
+      ],
+      "images": [
+        "http://localhost:5000/images/BD.gif",
+        "http://localhost:5000/images/BD.gif",
+        "http://localhost:5000/images/BD.gif"
+      ]
+    },
+    {
+      "id": "bce6e688-6649-4e8d-94f7-0b6c50f30c8b",
+      "date": "1999-09-19",
+      "category": 1,
+      "title": "Figma design",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio error facilis dolores ipsam at sequi commodi ad, voluptatibus porro perspiciatis et iste voluptate ipsum rem accusamus quos, nulla voluptates animi ratione? Vel magni alias molestiae eligendi explicabo labore porro facilis sed blanditiis. Nesciunt, sit cum enim consequuntur excepturi obcaecati suscipit quod! Officia, numquam placeat quasi tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere na... voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio? tenetur nulla ducimus, nesciunt possimus cupiditate, quae odio facere natus optio voluptate unde sapiente magni ab modi molestias dolorum nisi tempore? Nobis iste repudiandae a quod unde doloribus quis commodi in officiis quos hic mollitia, ipsam quam, eius consequuntur recusandae atque quisquam facilis. Neque, distinctio?",
+      "editor": "Maiklas",
+      "technologies": [
+        "React",
+        "HTML",
+        "CSS"
       ],
       "images": [
         "http://localhost:5000/images/BD.gif",

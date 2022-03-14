@@ -13,41 +13,27 @@ export const getProjectsItem = (req, res) => {
 
   res.status(200).json(project);
 };
-
 export const createProjectsItem = (req, res) => {
-  const newProject = req.body.newInfo;
+  const { projectInfo } = req.body;
   const projects = database.data.projects;
   const newItem = {
     id: createId(),
-    ...newProject,
+    ...projectInfo,
   };
   projects.push(newItem);
   database.write();
   res.status(200).json(newItem);
-  
-};
-
-export const deleteProjectsItem = (req, res) => {
-  const { projectId } = req.params;
-  const { title } = req.body;
-  const projects = database.data.projects;
-  const projectRef = database.data.projects.find((x) => x.id === projectId);
-
-  database.data.projects = projects.filter((x) => x.id !== projectId);
-  database.write();
-  res.status(200).send();
 };
 
 export const updateProjectsItem = (req, res) => {
   const { projectId } = req.params;
+  const { projectInfo } = req.body;
   const { date, category, title, description, editor, technologies, images } =
-    req.body.newInfo;
-  console.log(req.body);
+    projectInfo;
+  
   const projectRef = database.data.projects.find((x) => x.id === projectId);
   const project = database.data.projects;
-
   const itemToUpdate = project.find((x) => x.id === projectId);
-
   itemToUpdate.date = date ? date : itemToUpdate.date;
   itemToUpdate.category = category ? category : itemToUpdate.category;
   itemToUpdate.title = title ? title : itemToUpdate.title;
@@ -61,4 +47,12 @@ export const updateProjectsItem = (req, res) => {
   itemToUpdate.images = images ? images : itemToUpdate.images;
   database.write();
   res.status(200).json(itemToUpdate);
+};
+export const deleteProjectsItem = (req, res) => {
+  const { projectId } = req.params;
+  const projects = database.data.projects;
+  const projectRef = database.data.projects.find((x) => x.id === projectId);
+  database.data.projects = projects.filter((x) => x.id !== projectId);
+  database.write();
+  res.status(200).send();
 };

@@ -1,45 +1,31 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 import {
   ProjectsSelector,
+  FetchSelector,
   fetchProjects,
-  deleteProjectItem,
-  updateProjectItem,
-  createProjectItem,
 } from "../../../store/projects";
-import { Container, Button } from "@mui/material";
+import { Container } from "@mui/material";
 import NewProjectModal from "./new-project-modal";
 import ProjectsList from "./projects-list";
 
 const ProjectsPage = () => {
   const dispatch = useDispatch();
+  // const {state: { id }, } = useLocation();
   const projects = useSelector(ProjectsSelector);
-
+  const isFetched = useSelector(FetchSelector);
   useEffect(() => {
-    dispatch(fetchProjects());
-  }, []);
-
-  const handleDeleteItem = () => {
-    const newInfo = {
-      date: "1997-12-12",
-      category: 1,
-      title: "Figma design",
-      description: "nananna",
-      editor: "Markas Markovskis",
-      technologies: ["React", "UX/UI", "Figma"],
-      images: [
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif",
-        "http://localhost:5000/images/BD.gif",
-      ],
-    };
-    dispatch(createProjectItem({ newInfo }));
-  };
+      dispatch(fetchProjects());
+  },[]);
   return (
     <Container sx={{ height: "100%", width: "100%" }}>
-      <Button onClick={handleDeleteItem}>Delete item </Button>
+      
       <NewProjectModal />
-      <ProjectsList />
+      {isFetched ?
+      <ProjectsList projects={projects} />
+      :<h1> waiting</h1>
+      }
     </Container>
   );
 };

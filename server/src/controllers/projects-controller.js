@@ -28,8 +28,7 @@ export const createProjectsItem = (req, res) => {
 export const updateProjectsItem = (req, res) => {
   const { projectId } = req.params;
   const { projectInfo } = req.body;
-  const { date, category, title, description, editor, technologies, images } =
-    projectInfo;
+  const { date, category, title, description, editor, technologies, images } = projectInfo;
   
   const projectRef = database.data.projects.find((x) => x.id === projectId);
   const project = database.data.projects;

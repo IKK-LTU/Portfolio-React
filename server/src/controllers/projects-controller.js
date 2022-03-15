@@ -1,4 +1,5 @@
 import database from "../database/index.js";
+import ProjectViewModel from '../view-models/project-view-model.js'
 import { v4 as createId } from "uuid";
 
 export const getProjects = (req, res) => {
@@ -30,6 +31,7 @@ export const updateProjectsItem = (req, res) => {
   const { projectInfo } = req.body;
   const { date, category, title, description, editor, technologies, images } = projectInfo;
   
+
   const projectRef = database.data.projects.find((x) => x.id === projectId);
   const project = database.data.projects;
   const itemToUpdate = project.find((x) => x.id === projectId);
@@ -46,6 +48,20 @@ export const updateProjectsItem = (req, res) => {
   itemToUpdate.images = images ? images : itemToUpdate.images;
   database.write();
   res.status(200).json(itemToUpdate);
+};
+export const updateImage = (req, res) => {
+  const projects = database.data.projects.find((x) => x.id === req.projects.id);
+  const images = `/${process.env.IMG_PATH}/${req.file.filename}`;
+  if (projects.images) {
+    removeFile(projects.images);
+  }
+  projects.images = images;
+  database.write();
+
+  res.status(200).json({
+    message: "Image uploaded",
+    project: new UserViewModel(projects),
+  });
 };
 export const deleteProjectsItem = (req, res) => {
   const { projectId } = req.params;

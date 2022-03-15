@@ -1,6 +1,7 @@
 import axios from "axios";
 import store from "../store/index";
 
+
 const requester = axios.create({
   baseURL: "http://localhost:5000/api/",
   headers: {
@@ -9,21 +10,31 @@ const requester = axios.create({
 });
 const fetchProjects = async () => {
   try {
-    const { data } = await requester.get('/projects');
-    return data
-  }
-  catch (error) {
+    const { data } = await requester.get("/projects");
+    return data;
+  } catch (error) {
     throw new Error(error.message);
   }
 };
 const fetchProject = async () => {
   try {
-    const { data } = await requester.get('/projects');
-    return data
-  }
-  catch (error) {
+    const { data } = await requester.get("/projects");
+    return data;
+  } catch (error) {
     throw new Error(error.message);
   }
+};
+const uploadImage = async (img) => {
+  const { token } = store.getState().auth;
+    const formData = new FormData();
+    formData.append("img", img);
+    await requester.put("/img", formData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
 };
 
 const createProject = async ({ projectInfo }) => {
@@ -86,5 +97,6 @@ const ProjectsService = {
   updateProject,
   createProject,
   fetchProject,
+  uploadImage,
 };
 export default ProjectsService;

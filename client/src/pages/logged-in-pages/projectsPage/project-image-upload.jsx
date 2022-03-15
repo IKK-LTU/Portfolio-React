@@ -1,29 +1,16 @@
 import React, { useRef, useEffect } from "react";
 import { Box, styled, Fab } from "@mui/material";
 import AddAPhotoIcon from "@mui/icons-material/AddAPhoto";
-import UserService from "../../../services/user-service";
-const mdFixedPortion = 50;
+import ProjectsService from "../../../services/projects-service";
+
 const ImgContainer = styled(Box)(({ theme }) => ({
   position: "relative",
   display: "block",
-  height: "35vw",
-  width: "35vw",
+  height: "50vh",
+  width: "100%",
   marginLeft: "auto",
   marginRight: "auto",
-
-  // [theme.breakpoints.up("sm")]: {
-  //   // marginLeft: theme.spacing(2),
-  //   marginRight: "initial",
-  //   // marginTop: theme.spacing(3),
-  // },
-  [theme.breakpoints.up("md")]: {
-    height: `calc(${mdFixedPortion}px + 10vw)`,
-    width: `calc(${mdFixedPortion}px + 10vw)`,
-  },
-  [theme.breakpoints.up("lg")]: {
-    height: mdFixedPortion + 0.1 * theme.breakpoints.values.lg,
-    width: mdFixedPortion + 0.1 * theme.breakpoints.values.lg,
-  },
+  marginBottom: "2rem",
 }));
 
 const Img = styled("img")({
@@ -32,17 +19,14 @@ const Img = styled("img")({
   outline: "2px solid #79815E",
   objectFit: "cover",
   objectPosition: "cover",
-  borderRadius: "50%",
 });
 
 const calcOffset = (image, imgIcon) => {
-  const radius = image.offsetWidth / 2;
   const imageDimension = imgIcon.offsetWidth;
-
-  return radius * (1 - 1 / 2 ** (1 / 2)) - imageDimension / 2.3;
+  return  (1 - 1 / 2 ** (1 / 2)) - imageDimension / 2.3;
 };
 
-const ProfilePageImage = (props) => {
+const ProjectImageUpload = (props) => {
   const imageRef = useRef(null);
   const imgIconRef = useRef(null);
   const imgUploadRef = useRef(null);
@@ -55,7 +39,7 @@ const ProfilePageImage = (props) => {
   const handleUploadImgLoaded = async () => {
     const imgUpload = imgUploadRef.current;
     const [img] = imgUpload.files;
-    await UserService.uploadImage(img);
+    await ProjectsService.uploadImage(img);
   };
 
   useEffect(() => {
@@ -85,7 +69,6 @@ const ProfilePageImage = (props) => {
         color='primary'
         size='small'
         ref={imgIconRef}
-        
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -104,4 +87,4 @@ const ProfilePageImage = (props) => {
   );
 };
 
-export default ProfilePageImage;
+export default ProjectImageUpload;

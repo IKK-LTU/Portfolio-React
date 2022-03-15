@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { Button, Box, Modal, Typography, TextField } from "@mui/material";
+import {
+  Button,
+  Box,
+  Modal,
+  Typography
+} from "@mui/material";
+import ProjectForm from './project-form';
 // import ProjectsService from '../../../services/projects-service';
 const style = {
   position: "absolute",
@@ -11,19 +17,14 @@ const style = {
   bgcolor: "white",
   borderRadius: 1,
   boxShadow: 24,
+  overflowY:'scroll',
   p: 4,
 };
 const NewProjectModal = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-  // const updateItem = () => {
-  //   ProjectsService.updateProject({
-  //     itemId: "13",
-  //     title: "New title",
-  //   });
-  // };
+ 
 
   return (
     <>
@@ -41,19 +42,14 @@ const NewProjectModal = () => {
         aria-describedby='modal-modal-description'>
         <Box sx={style}>
           <Typography
+            sx={{ pb: 4 }}
             id='modal-modal-title'
             textAlign='center'
             variant='h6'
             component='h2'>
             Create project
           </Typography>
-          <form>
-            <TextField
-              id='outlined-basic'
-              label='Outlined'
-              variant='outlined'
-            />
-          </form>
+          <ProjectForm/>
         </Box>
       </Modal>
     </>

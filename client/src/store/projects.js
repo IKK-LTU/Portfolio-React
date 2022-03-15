@@ -15,10 +15,8 @@ export const fetchProjects = createAsyncThunk(
     } = getState();
     if (!isFetched) {
       const fetchedProjects = await ProjectsService.fetchProjects();
-      // console.log(fetchedProjects);
       return { projects: fetchedProjects };
     }
-    console.log(projects);
     return { projects };
   }
 );
@@ -29,7 +27,6 @@ export const fetchProject = createAsyncThunk(
     const existingProject = projects.find((x) => x.id === itemId);
     if (existingProject) throw new Error('project already exist');
     const fetchedProject = await ProjectsService.fetchProject({itemId});
-    console.log(fetchedProject);
     return { projects:fetchedProject };
   }
 );
@@ -45,9 +42,6 @@ export const createProjectItem = createAsyncThunk(
 export const updateProjectItem = createAsyncThunk(
   "Projects/updateeProject",
   async ({ itemId, projectInfo }) => {
-    console.log("------ gauna dispatchas--------");
-    console.log({itemId, projectInfo });
-    console.log("------ gauna dispatchas--------");
     const updatedItem = await ProjectsService.updateProject({
       itemId,
       projectInfo,
@@ -59,8 +53,6 @@ export const deleteProjectItem = createAsyncThunk(
   "Projects/deleteProject",
   async ({ itemId }) => {
      await ProjectsService.deleteProject({ itemId });
-    console.log({ itemId });
-    console.log('praejo');
     return { itemId };
   }
 );

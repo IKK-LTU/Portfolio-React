@@ -14,6 +14,7 @@ const useProjects = () => {
             }
         })()
     }, [searchParams])
+
     return projects;
 };
 

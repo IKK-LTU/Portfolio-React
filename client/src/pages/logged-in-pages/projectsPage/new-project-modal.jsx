@@ -5,8 +5,9 @@ import {
   Modal,
   Typography
 } from "@mui/material";
-import ProjectForm from './project-form';
 // import ProjectsService from '../../../services/projects-service';
+import ProjectForm from "./project-form";
+
 const style = {
   position: "absolute",
   width: "90%",
@@ -24,8 +25,6 @@ const NewProjectModal = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
- 
-
   return (
     <>
       <Button
@@ -49,7 +48,7 @@ const NewProjectModal = () => {
             component='h2'>
             Create project
           </Typography>
-          <ProjectForm/>
+          <ProjectForm open={open} />
         </Box>
       </Modal>
     </>

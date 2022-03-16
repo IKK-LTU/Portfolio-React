@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import {
   VISITOR,
-  // ADMIN,
+  ADMIN,
   LOGGED_IN,
   // PROJECTS_MANAGER,
   // BLOG_MANAGER,
@@ -58,7 +58,7 @@ export default [
       {
         path: "users-panel",
         pageName: "UsersManagerPage",
-        auth: LOGGED_IN,
+        auth: ADMIN,
       },
       {
         path: "projects-panel",
@@ -66,9 +66,14 @@ export default [
         auth: LOGGED_IN,
       },
       {
+        path: "projects-panel/:projectId",
+        pageName: "ProductEditorPage",
+        auth: ADMIN,
+      },
+      {
         path: "blog-panel",
         pageName: "BlogsManagerPage",
-        auth: LOGGED_IN,
+        auth: ADMIN,
       },
     ],
   },

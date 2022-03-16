@@ -1,5 +1,12 @@
 import React from "react";
-import { Container, Box, Typography, TextField } from "@mui/material";
+import { useFormik } from "formik";
+import * as yup from "yup";
+import {
+  Container,
+  Box,
+  Typography,
+  TextField,
+} from "@mui/material";
 import FormSendButton from "../../components/buttons/formSendButton";
 import ContactIcons from "../../components/contactsIcons/contactIcons";
 import { styled } from "@mui/material/styles";
@@ -32,7 +39,43 @@ const StyledFormBox = styled(Box)(({ theme }) => ({
     padding: "4rem",
   },
 }));
+const validationSchema = yup.object({
+  name: yup
+    .string()
+    .min(2, "At least 2 symbols")
+    .max(32, "Maximum 32 symbols")
+    .required("Is required"),
+  message: yup
+    .string()
+    .min(20, "At least 20 symbols")
+    .required("Is required"),
+  email: yup.string().email("Is not valid email").required("Is required"),
+});
+
 const ContactsPage = () => {
+
+const onSubmit = () => {
+  console.log("submited");
+};
+const {
+  values,
+  errors,
+  dirty,
+  isValid,
+  handleChange,
+  handleSubmit,
+  isSubmitting,
+} = useFormik({
+  initialValues: {
+    name: "",
+    email: "",
+    message: "",
+  },
+  validationSchema,
+  onSubmit,
+  enableReinitialize: true,
+});
+  
   return (
     <Container
       sx={{
@@ -40,17 +83,56 @@ const ContactsPage = () => {
         color: "#494444",
         p: 0,
       }}>
-      <StyledFormBox component='form' noValidate autoComplete='off'>
+      <StyledFormBox
+        onSubmit={handleSubmit}
+        component='form'
+        noValidate
+        autoComplete='off'>
         <Typography
           sx={{ textAlign: "center", pb: 3 }}
           component='h2'
           variant='h5'>
           Feel free to contact me
         </Typography>
-        <TextField label='Name' />
-        <TextField label='Email' />
-        <TextField label='Message' multiline rows={6} />
-        <FormSendButton buttonText='Send' />
+        <TextField
+          label='Vardas'
+          size='small'
+          name='name'
+          value={values.name}
+          onChange={handleChange}
+          error={Boolean(errors.name)}
+          helperText={errors.name}
+          disabled={isSubmitting}
+        />
+        <TextField
+          label='Paštas'
+          size='small'
+          name='email'
+          onChange={handleChange}
+          error={Boolean(errors.email)}
+          helperText={errors.email}
+          value={values.email}
+          disabled={isSubmitting}
+        />
+        <TextField
+          size='small'
+          name='message'
+          onChange={handleChange}
+          value={values.message}
+          error={Boolean(errors.message)}
+          helperText={errors.message}
+          disabled={isSubmitting}
+          label='Message'
+          multiline
+          rows={6}
+        />
+        <FormSendButton
+          variant='contained'
+          color='primary'
+          type='submit'
+          disabled={!dirty || !isValid}
+          buttonText='Send'
+        />
         <Box
           sx={{
             display: "flex",
@@ -58,7 +140,7 @@ const ContactsPage = () => {
             fontSize: "3rem",
             pt: 3,
           }}>
-        <ContactIcons/>
+          <ContactIcons />
         </Box>
       </StyledFormBox>
     </Container>

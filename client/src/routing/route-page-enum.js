@@ -9,6 +9,7 @@ import DashboardLayout from "../components/layouts/dashboard-layout/layout";
 import ErrorPage from "../pages/public-pages/error-page";
 import ProfilePage from '../pages/logged-in-pages/profilePage/'
 import ProjectsManagerPage from '../pages/logged-in-pages/projectsPage';
+import ProductEditorPage from "../pages/logged-in-pages/projectsPage/project-editor";
 import BlogsManagerPage from '../pages/logged-in-pages/blogsManagement';
 import UsersManagerPage from '../pages/logged-in-pages/adminPages';
 import PageLayoutDark from "../components/layouts/page-layout/page-layout_darkTheme";
@@ -28,5 +29,6 @@ export default {
   ProfilePage,
   UsersManagerPage,
   ProjectsManagerPage,
+  ProductEditorPage,
   BlogsManagerPage,
 };

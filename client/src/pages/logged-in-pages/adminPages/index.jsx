@@ -1,11 +1,16 @@
-import React from 'react'
+import React ,{ useEffect } from "react";
 import { Container, Typography } from "@mui/material";
 import UsersListTable from './users-list-table';
+import AdminService from "../../../services/admin-service";
+
 const UsersPage = () => {
+  useEffect(() => {
+    AdminService.getUsers();
+  }, []);
   return (
     <Container>
-      <Typography textAlign='center' variant='h3' component='h2'>User Manager Panel</Typography>
-      <UsersListTable/>
+      <Typography textAlign='center'sx={{pb:4}} variant='h3' component='h2'>Users List</Typography>
+      <UsersListTable />
     </Container>
   )
 }

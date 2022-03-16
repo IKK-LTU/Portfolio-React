@@ -12,8 +12,8 @@ const RequireAdmin = ({ children }) => {
     return <Navigate to={`${routes.LoginPage}?redirectTo=${pathname}`} />;
   }
 
-  if (user && user.role !== "admin") {
-    return <Navigate to='/page-not-found' />
+  if (user && user.role !== "ADMIN") {
+    return <Navigate to={`${routes.ProfilePage}`} />
   }
   return children;
 };

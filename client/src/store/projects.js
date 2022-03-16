@@ -100,11 +100,10 @@ const ProjectsSlice = createSlice({
   },
 });
 
-export const { deleteError } = ProjectsSlice.actions;
+export const { deleteError,projects } = ProjectsSlice.actions;
 
 export const ProjectsSelector = (state) => state.projects.projects;
 export const FetchSelector = (state) => state.projects.isFetched;
-export const ProjectItemSelector = (id) => (state) =>
-  state.projects.projects.find((x) => x.id === id);
+export const ProjectItemSelector = (id) => (state) => state.projects.projects.find((x) => x.id === id);
 
 export default ProjectsSlice.reducer;

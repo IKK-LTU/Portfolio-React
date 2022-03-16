@@ -9,8 +9,9 @@ class ProjectViewModel {
     this.editor = project.editor;
     this.technologies = project.technologies;
     if  (project.images) {
-      this.images = `${SERVER_DOMAIN}:${SERVER_PORT}$ project.images}`;
+      this.images = `${SERVER_DOMAIN}:${SERVER_PORT}${project.images}`;
     }
   }
-};
+}
+
 export default ProjectViewModel;

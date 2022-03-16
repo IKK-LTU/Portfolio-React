@@ -5,24 +5,15 @@ import {
   deleteProjectsItem,
   updateProjectsItem,
   createProjectsItem,
-  updateImage,
 } from "../controllers/projects-controller.js";
 import authMiddleware from "../middlewares/auth-middleware.js";
-import imgUploadMiddleware from "../middlewares/img-upload-middleware.js";
-
-
+import adminMiddleware from "../middlewares/admin-middleware.js";
 const router = Router();
 
-
 router.get("/", getProjects);
-router.post("/", createProjectsItem);
+router.post("/",authMiddleware, createProjectsItem);
 router.get("/:projectId", getProjectsItem);
-router.delete("/:projectId", deleteProjectsItem);
-router.patch("/:projectId", updateProjectsItem);
-router.put(
-  "/img",
-  authMiddleware,
-  imgUploadMiddleware.single("img"),
-  updateImage
-);
+router.delete("/:projectId",authMiddleware, deleteProjectsItem);
+router.patch("/:projectId", authMiddleware, adminMiddleware, updateProjectsItem);
+
 export default router;

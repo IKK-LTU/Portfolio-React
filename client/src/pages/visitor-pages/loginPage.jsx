@@ -28,13 +28,10 @@ const LoginPage = () => {
   const [errorMsg, setErrorMsg] = useState(null);
 
   const handleLogin = async ({ email, password }) => {
-    console.log("veikia");
     try {
       const redirectTo = searchParams.get("redirectTo");
-      console.log(redirectTo);
       await AuthService.login({ email, password }, redirectTo);
     } catch (error) {
-      console.log("neveikia");
       setErrorMsg(error.message);
     }
   };

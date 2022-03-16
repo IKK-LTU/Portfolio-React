@@ -22,7 +22,7 @@ export const updateProfile = (req, res) => {
     token = createToken({ email, role: foundUser.role });
   }
   database.write();
-
+  
   const responseJson = {
     message: "Profile updated",
     user: new UserViewModel(foundUser),

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { DataContext } from "../../public-pages/context/data-context";
 import { useFormik } from "formik";
 import { useSelector, useDispatch } from "react-redux";
-import { createProjectItem } from "../../../store/projects";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import {
   TextField,
@@ -11,12 +11,15 @@ import {
   InputLabel,
   FormControl,
   Select,
+  Typography
 } from "@mui/material";
+import { updateProjectItem } from "../../../store/projects";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import format from "date-fns/format";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 import { selectAuth } from "../../../store/auth";
+import { ProjectItemSelector } from "../../../store/projects";
 
 const validationSchema = yup.object({
   title: yup
@@ -37,13 +40,21 @@ const validationSchema = yup.object({
     .required("Is required"),
 });
 
-const ProjectForm = ({open}) => {
-  const { technologies } = useContext(DataContext);
+const ProjectEditor = (props) => {
+  const { projectId } = useParams();
   const dispatch = useDispatch();
+  const { technologies } = useContext(DataContext);
   const [projectDate, setProjectDate] = useState(new Date());
   const { user } = useSelector(selectAuth);
+   const {
+     state: { id },
+  } = useLocation();
+  const navigate = useNavigate();
+  const projects  = useSelector(ProjectItemSelector(id) ?? {});
   const [technologiesList, setTechnologiesList] = useState([]);
   const names = technologies.map((item) => item.title);
+
+
   const handleChangeMultiple = (event) => {
     const { options } = event.target;
     for (let i = 0, l = options.length; i < l; i += 1) {
@@ -66,19 +77,19 @@ const ProjectForm = ({open}) => {
     const projectInfo = {
       ...values,
     };
-    dispatch(createProjectItem({ projectInfo }));
-    window.location.reload(true);
+    dispatch(updateProjectItem({ itemId: projectId, projectInfo }));
+    navigate(-1);
   };
   const { values, errors, handleChange, handleSubmit, isSubmitting } =
     useFormik({
       initialValues: {
-        title: "",
+        title: projects.title,
         date: format(projectDate, "yyyy-MM-dd"),
         category: 1,
         editor: `${user.name} ${user.surname}`,
         technologies: technologiesList,
         images: ["http://localhost:5000/images/BD.gif"],
-        description: "",
+        description: projects.description,
       },
       validationSchema,
       onSubmit,
@@ -92,7 +103,9 @@ const ProjectForm = ({open}) => {
         flexDirection: "column",
         justifyContent: "center",
         margin: "auto",
+        width: "100%",
       }}>
+      <Typography textAlign='center' variant='h4' component='h1' sx={{pb:4}}>Update project</Typography>
       <TextField
         label='Project Title'
         variant='outlined'
@@ -103,6 +116,7 @@ const ProjectForm = ({open}) => {
         disabled={isSubmitting}
         sx={{ pb: 2 }}
       />
+
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           sx={{
@@ -161,11 +175,21 @@ const ProjectForm = ({open}) => {
         placeholder='Describe project'
         minRows={10}
       />
-      <Button fullWidth sx={{ mt: 3 }} type='submit'>
-        Create Project
+      <Button
+        fullWidth
+        sx={{
+          mt: 3,
+          background: "#83cd20",
+          color: "white",
+          "&:hover": {
+            background: "#83cd83",
+          },
+        }}
+        type='submit'>
+        Update Project
       </Button>
     </form>
   );
 };
 
-export default ProjectForm;
+export default ProjectEditor;

@@ -80,3 +80,70 @@ const ProjectsPage = () => {
 };
 
 export default ProjectsPage;
+
+
+  // const { projects, loading } = useContext(DataContext);
+  // const [ hasMore, setHasMore]  = useState(true);
+  // const [items, setItems] = useState(projects.slice(0, 3))
+  // const [n, setN] = useState(3);
+
+  // const fetchMoreData = () => {
+  //   if (projects.length >= 500) {
+  //     setHasMore(false);
+  //     return;
+  //   }
+  //   // a fake async api call like which sends
+  //   // 20 more records in .5 secs
+  //   setTimeout(() => {
+  //     setItems(items.concat(projects.slice(n, n+2)));
+  //     setN(n + 2);
+  //   }, 1000);
+  // };
+  
+  // console.log(projects);
+  // console.log(items);
+  // console.log(loading);
+  // console.log(hasMore)
+  // console.log(n)
+  // return (
+  //   <StyledProjectPageContainer sx={{}}>
+  //     {loading === false ?  (
+  //       <InfiniteScroll
+  //         dataLength={10}
+  //         next={fetchMoreData}
+  //         hasMore={hasMore}
+  //         loader={<h4>Loading...</h4>}
+  //         endMessage={
+  //           <p style={{ textAlign: "center" }}>
+  //             <b>Yay! You have seen it all</b>
+  //           </p>
+  //         }>
+
+  //         {items.map((project) => (
+  //           <ProjectContainer key={project.id} projectDate={project.date}>
+  //             <DateText varian='p' />
+  //             <StyledProjectBox>
+  //               <ImageBox src={project.images[0]} />
+  //               <ProjectDescriptionBox>
+  //                 <Typography
+  //                   varian='h2'
+  //                   component='h2'
+  //                   sx={{
+  //                     color: "#FF7D7D",
+  //                     fontSize: "1.2rem",
+  //                     textAlign: "center",
+  //                     py: 2,
+  //                   }}>
+  //                   {project.title}
+  //                 </Typography>
+  //                 <ReadMore text={project.description} />
+  //                 <LinkToProject linkTo='./' />
+  //               </ProjectDescriptionBox>
+  //             </StyledProjectBox>
+  //           </ProjectContainer>
+  //         ))}
+  //       </InfiniteScroll>
+  //     )
+  //     : <h1>Krauna</h1>
+  //     }
+  //   </StyledProjectPageContainer>

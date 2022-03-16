@@ -1,12 +1,11 @@
 import database from "../database/index.js";
-import ProjectViewModel from '../view-models/project-view-model.js'
+// import ProjectViewModel from "../view-models/project-view-model.js"
 import { v4 as createId } from "uuid";
 
 export const getProjects = (req, res) => {
   const projects = database.data.projects;
   res.status(200).json(projects);
 };
-
 export const getProjectsItem = (req, res) => {
   const DB = JSON.parse(JSON.stringify(database.data));
   const { projectId } = req.params;
@@ -25,7 +24,6 @@ export const createProjectsItem = (req, res) => {
   database.write();
   res.status(200).json(newItem);
 };
-
 export const updateProjectsItem = (req, res) => {
   const { projectId } = req.params;
   const { projectInfo } = req.body;
@@ -48,21 +46,17 @@ export const updateProjectsItem = (req, res) => {
   itemToUpdate.images = images ? images : itemToUpdate.images;
   database.write();
   res.status(200).json(itemToUpdate);
-};
-export const updateImage = (req, res) => {
-  const projects = database.data.projects.find((x) => x.id === req.projects.id);
-  const images = `/${process.env.IMG_PATH}/${req.file.filename}`;
-  if (projects.images) {
-    removeFile(projects.images);
-  }
-  projects.images = images;
-  database.write();
 
-  res.status(200).json({
-    message: "Image uploaded",
-    project: new UserViewModel(projects),
-  });
 };
+// export const updateImage = (req, res) => {
+//   const imgSrc = `/${process.env.IMG_PATH}/${req.file.filename}`;
+//   database.write();
+//   res.status(200).json({
+//     message: "Image uploaded",
+//     project: new ProjectViewModel(project),
+//   });
+// };
+
 export const deleteProjectsItem = (req, res) => {
   const { projectId } = req.params;
   const projects = database.data.projects;

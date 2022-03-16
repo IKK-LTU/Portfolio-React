@@ -4,6 +4,7 @@ import { v4 as createId } from "uuid";
 
 const initialState = {
   collection: [],
+  isFetched: false,
 };
 
 const userSlice = createSlice({
@@ -12,6 +13,7 @@ const userSlice = createSlice({
   reducers: {
     loadUsers(state, { payload }) {
       state.collection = payload.users;
+      state.isFetched = true ;
     },
     addUser(state, { payload }) {
       const newUser = {
@@ -38,5 +40,6 @@ const userSlice = createSlice({
 export const { addUser, deleteUser, updateUser, loadUsers } = userSlice.actions;
 
 export const selectUsers = (state) => state.users.collection;
+export const selectloading = (state) => state.users.isFetched;
 
 export default userSlice.reducer;

@@ -24,18 +24,7 @@ const fetchProject = async () => {
     throw new Error(error.message);
   }
 };
-const uploadImage = async (img) => {
-  const { token } = store.getState().auth;
-    const formData = new FormData();
-    formData.append("img", img);
-    await requester.put("/img", formData, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "multipart/form-data",
-      },
-    });
 
-};
 
 const createProject = async ({ projectInfo }) => {
   const { token } = store.getState().auth;
@@ -97,6 +86,5 @@ const ProjectsService = {
   updateProject,
   createProject,
   fetchProject,
-  uploadImage,
 };
 export default ProjectsService;

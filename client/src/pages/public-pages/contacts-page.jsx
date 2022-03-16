@@ -1,12 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import {
-  Container,
-  Box,
-  Typography,
-  TextField,
-} from "@mui/material";
+import { Container, Box, Typography, TextField } from "@mui/material";
 import FormSendButton from "../../components/buttons/formSendButton";
 import ContactIcons from "../../components/contactsIcons/contactIcons";
 import { styled } from "@mui/material/styles";
@@ -45,37 +40,33 @@ const validationSchema = yup.object({
     .min(2, "At least 2 symbols")
     .max(32, "Maximum 32 symbols")
     .required("Is required"),
-  message: yup
-    .string()
-    .min(20, "At least 20 symbols")
-    .required("Is required"),
+  message: yup.string().min(20, "At least 20 symbols").required("Is required"),
   email: yup.string().email("Is not valid email").required("Is required"),
 });
 
 const ContactsPage = () => {
+  const onSubmit = () => {
+    console.log("submited");
+  };
+  const {
+    values,
+    errors,
+    dirty,
+    isValid,
+    handleChange,
+    handleSubmit,
+    isSubmitting,
+  } = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    validationSchema,
+    onSubmit,
+    enableReinitialize: true,
+  });
 
-const onSubmit = () => {
-  console.log("submited");
-};
-const {
-  values,
-  errors,
-  dirty,
-  isValid,
-  handleChange,
-  handleSubmit,
-  isSubmitting,
-} = useFormik({
-  initialValues: {
-    name: "",
-    email: "",
-    message: "",
-  },
-  validationSchema,
-  onSubmit,
-  enableReinitialize: true,
-});
-  
   return (
     <Container
       sx={{
@@ -95,7 +86,7 @@ const {
           Feel free to contact me
         </Typography>
         <TextField
-          label='Vardas'
+          label='Name'
           size='small'
           name='name'
           value={values.name}
@@ -105,7 +96,7 @@ const {
           disabled={isSubmitting}
         />
         <TextField
-          label='Paštas'
+          label='Email'
           size='small'
           name='email'
           onChange={handleChange}

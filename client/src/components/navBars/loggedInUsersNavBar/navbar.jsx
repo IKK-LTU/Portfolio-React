@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { logout } from "../../../store/auth";
 import {
   Button,
@@ -40,6 +41,7 @@ const StyledPopperBox = styled(Popover)(({ theme }) => ({
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { user } = useSelector(selectAuth);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -113,8 +115,8 @@ const Navbar = () => {
               vertical: "top",
               horizontal: "right",
             }}>
-            <Button disableRipple>
-              <PermIdentityTwoToneIcon sx={{ mr: 3 }} />
+            <Button onClick={()=>{navigate("/dashboard");}} disableRipple>
+              <PermIdentityTwoToneIcon  sx={{ mr: 3 }} />
               Profile
             </Button>
             <Button onClick={() => dispatch(logout())} disableRipple>

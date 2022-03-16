@@ -25,7 +25,6 @@ const StyledContainer = styled(Container)(({ theme }) => ({
     span: { fontSize: ".8rem" },
   },
 }));
-
 const HomePage = () => {
   return (
     <StyledContainer>
@@ -37,10 +36,9 @@ const HomePage = () => {
         variant='p'
         sx={{ fontSize: 18, fontFamily: "ChivoRegular", py: 8 }}>
         I’m WEB developer who are always searching for the new opportunities to
-        grow. I think it’s must to seek perfection and then you will even
-        surprise yourself.
+        grow.
       </Typography>
-      <ContactMeButton buttonText="Contact me" />
+      <ContactMeButton buttonText='Contact me' />
     </StyledContainer>
   );
 };
